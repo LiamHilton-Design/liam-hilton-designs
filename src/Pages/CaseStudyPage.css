@@ -1,0 +1,680 @@
+/**
+ * CaseStudyPage.css
+ * Liam Hilton Designs
+ *
+ * VISUAL ENGINEERING:
+ *
+ * The reading progress bar is 2px fixed at the very top of the viewport.
+ * It fills left-to-right as the user scrolls — a subtle signal that
+ * says "this document has depth" without shouting it.
+ *
+ * The hero uses the project's placeholder colour as its full background.
+ * Every case study is a unique visual experience from the moment it opens.
+ *
+ * The ghost number (the large 01/02/03 behind the title) uses the same
+ * technique as the Work section — enormous type at near-zero opacity.
+ * At full viewport width this creates a dramatic typographic backdrop.
+ *
+ * The device mockups float at staggered heights:
+ * Desktop: baseline (translateY 0)
+ * Tablet:  lifted (translateY -40px)
+ * Mobile:  most lifted (translateY -80px)
+ * This creates a sense of depth — devices exist in 3D space.
+ * The frames are pure CSS — no image assets needed.
+ *
+ * The body sections use a two-column layout on desktop:
+ * Left column: section label (small, muted, uppercase) + number
+ * Right column: headline + body text
+ * This is the editorial magazine layout applied to long-form content.
+ * It creates breathing room and makes the content feel considered.
+ */
+
+/* ─── Reading progress bar ────────────────────────────────────────────────── */
+
+.cs-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+  }
+  
+  .cs-progress__fill {
+    height: 100%;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+  }
+  
+  /* ─── Back button ─────────────────────────────────────────────────────────── */
+  
+  .cs-back {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .cs-back:hover {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.55);
+  }
+  
+  /* ─── Hero ────────────────────────────────────────────────────────────────── */
+  
+  .cs-hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--space-3xl);
+    overflow: hidden;
+  }
+  
+  /* Ghost number — large, decorative, behind content */
+  .cs-hero__ghost-num {
+    position: absolute;
+    bottom: -0.1em;
+    right: -0.05em;
+    font-family: var(--font-display);
+    font-size: clamp(20rem, 35vw, 40rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.85;
+    color: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  
+  .cs-hero__container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+    width: 100%;
+  }
+  
+  .cs-hero__content {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  /* Meta row */
+  .cs-hero__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .cs-hero__category {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .cs-hero__dot {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8em;
+  }
+  
+  .cs-hero__year {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.06em;
+  }
+  
+  .cs-hero__status {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  
+  .cs-hero__status--live    { color: #1D9E75; }
+  .cs-hero__status--concept { color: #EF9F27; }
+  
+  /* Result */
+  .cs-hero__result {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  /* Title */
+  .cs-hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  /* Description */
+  .cs-hero__description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 52ch;
+    margin: 0;
+  }
+  
+  /* Tags */
+  .cs-hero__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .cs-hero__tag {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  
+  /* Live link */
+  .cs-hero__live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid;
+    padding: 12px 22px;
+    border-radius: var(--border-radius);
+    align-self: flex-start;
+    transition: opacity 0.2s ease, gap 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+  
+  .cs-hero__live-link:hover {
+    opacity: 0.8;
+    gap: 12px;
+  }
+  
+  /* ─── Metrics strip ───────────────────────────────────────────────────────── */
+  
+  .cs-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--lhd-neutral-900);
+    border-bottom: 1px solid var(--lhd-dark-700);
+  }
+  
+  @media (min-width: 640px) {
+    .cs-metrics {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .cs-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: var(--space-2xl);
+    border-right: 1px solid var(--lhd-dark-700);
+    border-bottom: 1px solid var(--lhd-dark-700);
+  }
+  
+  .cs-metric:last-child { border-right: none; }
+  
+  @media (min-width: 640px) {
+    .cs-metric { border-bottom: none; }
+  }
+  
+  .cs-metric__value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  
+  .cs-metric__label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lhd-dark-400);
+  }
+  
+  /* ─── Device mockups ──────────────────────────────────────────────────────── */
+  
+  .cs-devices-section {
+    background-color: var(--lhd-neutral-900);
+    padding-block: var(--space-3xl);
+    overflow: hidden;
+  }
+  
+  .cs-devices-container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+  }
+  
+  .cs-devices {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--space-lg);
+    min-height: 380px;
+  }
+  
+  /* ── Individual device ── */
+  
+  .cs-device {
+    flex-shrink: 0;
+  }
+  
+  /* Desktop */
+  .cs-device--desktop {
+    flex: 1;
+    max-width: 640px;
+    transform: translateY(0);
+  }
+  
+  /* Tablet — lifted */
+  .cs-device--tablet {
+    width: 200px;
+    transform: translateY(-40px);
+  }
+  
+  /* Mobile — most lifted */
+  .cs-device--mobile {
+    width: 110px;
+    transform: translateY(-80px);
+  }
+  
+  /* ── Device frames ── */
+  
+  .cs-device__frame {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 32px 64px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Desktop frame — browser chrome */
+  .cs-device__frame--desktop {
+    border-radius: 10px;
+  }
+  
+  .cs-device__bar {
+    height: 28px;
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    padding-inline: 12px;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .cs-device__bar span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Tablet frame */
+  .cs-device__frame--tablet {
+    border-radius: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Mobile frame */
+  .cs-device__frame--mobile {
+    border-radius: 24px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+  
+  .cs-device__notch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    z-index: 1;
+  }
+  
+  /* ── Screens ── */
+  
+  .cs-device__screen {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .cs-device__frame--tablet .cs-device__screen,
+  .cs-device__frame--mobile .cs-device__screen {
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+  }
+  
+  .cs-device__screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  
+  .cs-device__placeholder-label {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* ─── Case study body ─────────────────────────────────────────────────────── */
+  
+  .cs-body {
+    background-color: var(--color-bg);
+    padding-block: var(--space-3xl);
+  }
+  
+  .cs-body__container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+  }
+  
+  /* Each section — two column layout on desktop */
+  .cs-body__section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .cs-body__section:last-child { border-bottom: none; }
+  
+  @media (min-width: 768px) {
+    .cs-body__section {
+      grid-template-columns: 200px 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+  
+  /* Section label — left column */
+  .cs-body__section-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  
+  @media (min-width: 768px) {
+    .cs-body__section-label {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 4px;
+    }
+  }
+  
+  .cs-body__section-num {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 1;
+    color: rgba(17, 18, 23, 0.06);
+  }
+  
+  @media (min-width: 768px) {
+    .cs-body__section-num { font-size: clamp(3rem, 5vw, 5rem); }
+  }
+  
+  .cs-body__section-label > span:last-child {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  
+  /* Section content — right column */
+  .cs-body__section-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .cs-body__section-headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+  
+  .cs-body__section-text {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.85;
+    color: var(--color-text-muted);
+    max-width: 65ch;
+    margin: 0;
+  }
+  
+  /* ─── Next project ────────────────────────────────────────────────────────── */
+  
+  .cs-next {
+    background-color: var(--lhd-neutral-900);
+    padding-block: var(--space-3xl);
+  }
+  
+  .cs-next > * {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+  }
+  
+  .cs-next__label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lhd-dark-400);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .cs-next__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    text-decoration: none;
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--lhd-dark-700);
+    border-bottom: 1px solid var(--lhd-dark-700);
+    transition: opacity 0.2s ease;
+  }
+  
+  .cs-next__link:hover { opacity: 0.7; }
+  
+  .cs-next__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .cs-next__category {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .cs-next__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--lhd-dark-50);
+    margin: 0;
+  }
+  
+  .cs-next__result {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--lhd-dark-400);
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .cs-next__arrow {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .cs-next__link:hover .cs-next__arrow {
+    transform: translateX(12px);
+  }
+  
+  /* ─── 404 state ───────────────────────────────────────────────────────────── */
+  
+  .cs-notfound {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    background: var(--lhd-neutral-900);
+    text-align: center;
+    padding: var(--space-lg);
+  }
+  
+  .cs-notfound__code {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 20vw, 14rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    color: rgba(255, 255, 255, 0.04);
+    line-height: 1;
+    margin: 0;
+  }
+  
+  .cs-notfound__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--lhd-dark-50);
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+  
+  .cs-notfound__body {
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    color: var(--lhd-dark-400);
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .cs-notfound__link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--lhd-orange-light);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  .cs-notfound__link:hover { opacity: 0.7; }
+  
+  /* ─── Mobile ──────────────────────────────────────────────────────────────── */
+  
+  @media (max-width: 640px) {
+    .cs-devices {
+      gap: var(--space-md);
+      min-height: 280px;
+    }
+    .cs-device--tablet { width: 140px; transform: translateY(-30px); }
+    .cs-device--mobile { width: 80px;  transform: translateY(-55px); }
+    .cs-back { top: 16px; left: 16px; }
+  }
+  
+  /* ─── Reduced motion ──────────────────────────────────────────────────────── */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .cs-progress__fill { transition: none; }
+    .cs-back,
+    .cs-hero__live-link,
+    .cs-next__link,
+    .cs-next__arrow { transition: none; }
+  }

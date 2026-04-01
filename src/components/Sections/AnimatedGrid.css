@@ -1,0 +1,36 @@
+/**
+ * AnimatedGrid.css — Updated for light background
+ * Liam Hilton Designs
+ *
+ * KEY CHANGE: on a light background the grid needs higher opacity
+ * and darker stroke colours to be visible.
+ * The grid in AnimatedGrid.jsx uses --color-primary which is Persian
+ * blue (#3F20CE) — on white this is visible but subtle.
+ * We increase the wrapper opacity and rely on the SVG strokeOpacity
+ * in AnimatedGrid.jsx being set to at least 0.12.
+ */
+
+ .hero__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;           /* Full opacity — grid visibility controlled by SVG strokeOpacity */
+  overflow: hidden;
+}
+
+.hero__grid-svg {
+  width: 100%;
+  height: 90%;
+  animation: gridDrift 20s linear infinite;
+  will-change: transform;
+}
+
+@keyframes gridDrift {
+  from { transform: translateY(20px); }
+  to   { transform: translateY(-60px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__grid-svg { animation-play-state: paused; }
+}

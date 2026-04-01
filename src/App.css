@@ -1,0 +1,15 @@
+/**
+ * App.css — Clean version
+ * Liam Hilton Designs
+ *
+ * Simple global resets only.
+ * No clip-path wrappers needed.
+ */
+
+ body {
+    background-color: var(--color-bg);
+  }
+  
+  main {
+    overflow: visible;
+  }

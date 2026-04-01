@@ -1,0 +1,178 @@
+/**
+ * MarqueeStrip.css
+ * Liam Hilton Designs
+ *
+ * THE MARQUEE TECHNIQUE:
+ * overflow:hidden clips the track to the viewport width.
+ * The track is display:flex so items sit in a single row.
+ * The animation translates X by -50% — because the track
+ * contains two sets of items, -50% = exactly one set width.
+ * When it resets to 0%, the identical second set makes
+ * the reset invisible. Perfect seamless loop in pure CSS.
+ *
+ * SPEED VARIANTS:
+ * Slow: 40s — tools strip (logos need reading time)
+ * Medium: 25s — value props
+ * Fast: 15s — energy/excitement effect
+ */
+
+/* ─── Container ───────────────────────────────────────────────────────────── */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    
+  
+    /* Fade edges — masks the start and end of the strip */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+  
+  /* ─── Track ───────────────────────────────────────────────────────────────── */
+  
+  .marquee__track {
+    display: flex;
+    width: max-content;       /* Expands to fit all items */
+    will-change: transform;
+  }
+  
+  /* Left direction (default) */
+  .marquee__track--left {
+    animation: marqueeLeft var(--marquee-duration, 25s) linear infinite;
+  }
+  
+  /* Right direction */
+  .marquee__track--right {
+    animation: marqueeRight var(--marquee-duration, 25s) linear infinite;
+  }
+  
+ /**
+ * MarqueeStrip.css
+ * Liam Hilton Designs
+ *
+ * Keyframe animations must be in CSS — cannot be inline styles.
+ * These are the only rules that MUST be in this file.
+ * Everything else is handled with inline styles in the component
+ * as a fallback guarantee that the marquee always renders.
+ */
+
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track--left,
+  .marquee__track--right {
+    animation-play-state: paused;
+  }
+}
+  
+  /* ─── Speed variants ──────────────────────────────────────────────────────── */
+  
+  .marquee--slow   { --marquee-duration: 40s; }
+  .marquee--medium { --marquee-duration: 28s; }
+  .marquee--fast   { --marquee-duration: 16s; }
+  
+  /* ─── Items ───────────────────────────────────────────────────────────────── */
+  
+  .marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-inline: 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .marquee__sep {
+    color: var(--color-brand);     /* Orange separator — brand accent */
+    font-weight: 700;
+    font-size: 0.9em;
+    opacity: 0.7;
+  }
+  
+  /* ─── Default variant — value props text strip ────────────────────────────── */
+  
+  .marquee--default .marquee__label,
+  .marquee--values .marquee__label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+  
+  /* ─── Tools variant ───────────────────────────────────────────────────────── */
+  
+  .marquee--tools {
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .marquee--tools .marquee__item {
+    gap: 12px;
+    padding-inline: 24px;
+  }
+  
+  .marquee--tools .marquee__label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  
+  .marquee--tools .marquee__item:hover .marquee__label {
+    color: var(--color-primary);
+  }
+  
+  .marquee--tools .marquee__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  
+  .marquee--tools .marquee__icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-text-muted);
+    transition: fill 0.2s ease;
+  }
+  
+  .marquee--tools .marquee__item:hover .marquee__icon svg {
+    fill: var(--color-primary);
+  }
+  
+  /* ─── Reduced motion ──────────────────────────────────────────────────────── */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track--left,
+    .marquee__track--right {
+      animation-play-state: paused;
+    }
+  }

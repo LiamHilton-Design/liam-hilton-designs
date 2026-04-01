@@ -1,0 +1,268 @@
+/**
+ * variables.css
+ * Liam Hilton Designs — Design Token System
+ *
+ * This is the single source of truth for all design decisions.
+ * Every value in every component references a token from this file.
+ *
+ * Figma/Relume integration notes:
+ * - Token names map directly to Figma variable names (use same naming)
+ * - Colours are defined once in :root, overridden in [data-theme="dark"]
+ * - Dark mode is opt-in via JS toggle, NOT driven by OS preference
+ *   Usage: document.documentElement.setAttribute('data-theme', 'dark')
+ * - Spacing scale uses a geometric progression (×1.5 per step)
+ * - Typography scale uses a minor third (×1.25) modular scale
+ *
+ * When you export from Figma with Tokens Studio or Relume's export:
+ *   1. Replace hex values in Layer 1 with exported values
+ *   2. Font family strings should match your @font-face declarations
+ */
+
+/* ─── Font imports ───────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('../fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
+       url('../fonts/CabinetGrotesk-Variable.woff') format('woff');
+  font-weight: 100 900;   /* tells the browser this file covers the full range */
+  font-style: normal;
+  font-display: swap;     /* show fallback font immediately, swap when ready */
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/SatoshiVariable.woff2') format('woff2'),
+       url('../fonts/SatoshiVariable.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* ════════════════════════════════════════════════════════════════
+   LAYER 1 — PALETTE
+   Raw colour values. Named after what they ARE.
+   Never reference these directly in components — only in Layer 2.
+   To swap a brand colour: change values here only.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Persian Blue — primary action colour, logo colour */
+  --lhd-persian-lightest: #EBE8FA;   /* card backgrounds, badge fills */
+  --lhd-persian-lighter:  #D8D2F5;   /* hover tints, subtle borders */
+  --lhd-persian-light:    #7862DC;   /* active states, tinted accents */
+  --lhd-persian-500:      #3F20CE;   /* base — buttons, links, focus rings */
+  --lhd-persian-dark:     #3219A4;   /* hover/pressed on primary */
+
+  /* Orange — brand energy, section backgrounds, decorative accents */
+  --lhd-orange-lightest:  #FEF0EA;   /* very light tint for subtle warmth */
+  --lhd-orange-light:     #FF8B62;   /* section backgrounds, warm highlights */
+  --lhd-orange-500:       #D85A30;   /* decorative accents, eyebrow dots, stats */
+  --lhd-orange-dark:      #B84420;   /* hover on orange elements */
+
+  /* Warm neutrals — all warm-tinted, never pure grey */
+  --lhd-neutral-0:   #FFFFFF;
+  --lhd-neutral-50:  #F9F7F4;        /* warm off-white — main page bg */
+  --lhd-neutral-100: #F0EDE8;        /* cards, image placeholders */
+  --lhd-neutral-200: #E2DDD7;        /* hairline borders */
+  --lhd-neutral-500: #6B6860;        /* secondary copy, labels */
+  --lhd-neutral-900: #111217;        /* Woodsmoke — primary text & dark section bg */
+
+  /* Dark mode neutrals */
+  --lhd-dark-950:    #0E0D0C;        /* page bg */
+  --lhd-dark-900:    #1A1917;        /* surfaces */
+  --lhd-dark-700:    #2A2825;        /* borders */
+  --lhd-dark-400:    #8A8780;        /* muted text */
+  --lhd-dark-50:     #F2EFE9;        /* primary text on dark */
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   LAYER 2 — SEMANTIC TOKENS  (light mode default)
+   Named after their ROLE. This is what components reference.
+   To rebrand: remap these to different palette values above.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Logo ────────────────────────────────────────────────────── */
+--color-logo:            var(--lhd-persian-dark);   /* navbar + footer logo fill */ 
+
+  /* ── Primary action (Persian Blue) ──────────────────────────── */
+  --color-primary:         var(--lhd-persian-500);    /* buttons, links, focus rings */
+  --color-primary-hover:   var(--lhd-persian-dark);   /* hover/pressed on primary */
+
+  --color-primary-subtle:  var(--lhd-persian-light);  /* active nav, tinted accents */
+  --color-primary-tint:    var(--lhd-persian-lightest); /* card bg, badge fills */
+  --color-primary-tint-md: var(--lhd-persian-lighter); /* mid-tint, subtle borders */
+
+  /* ── Brand / orange ──────────────────────────────────────────── */
+  /* Orange is decorative and sectional — not for interactive states */
+  --color-brand:           var(--lhd-orange-500);     /* eyebrow dots, scroll line, badge stats */
+  --color-brand-hover:     var(--lhd-orange-dark);    /* hover on orange elements */
+  --color-brand-light:     var(--lhd-orange-light);   /* section backgrounds, warm highlights */
+  --color-brand-tint:      var(--lhd-orange-lightest);/* very subtle warm tint */
+  --color-secondary-hover:   var(--lhd-orange-light);   /* hover/pressed on primary */
+
+
+  /* ── Surfaces & layout ───────────────────────────────────────── */
+  --color-bg:              var(--lhd-neutral-50);     /* main page background — warm off-white */
+  --color-surface:         var(--lhd-neutral-100);    /* cards, image placeholders */
+  --color-border:          var(--lhd-neutral-200);    /* hairline borders */
+  --secondary-color-border: var(--lhd-persian-500);
+
+  /* Section backgrounds — used via utility classes or inline in JSX */
+  --color-section-blue:    var(--lhd-persian-500);    /* Persian Blue sections */
+  --color-section-orange:  var(--lhd-orange-light);   /* Orange Light sections */
+  --color-section-dark:    var(--lhd-neutral-900);    /* Woodsmoke sections */
+
+  /* ── Text ────────────────────────────────────────────────────── */
+  --color-text-primary:    var(--lhd-neutral-900);    /* headings, body */
+  --color-text-muted:      var(--lhd-neutral-500);    /* secondary copy, labels */
+  /* On blue sections: use --lhd-persian-lighter for muted text */
+  /* On orange sections: use white/off-white for text */
+  /* On dark sections: use --lhd-dark-50 for primary, --lhd-dark-400 for muted */
+
+  /* ── Buttons ─────────────────────────────────────────────────── */
+/* Component-level tokens — reference semantic tokens only.      */
+/* To restyle all buttons site-wide: change values here only.    */
+
+--btn-bg:              var(--color-brand-light);
+--btn-bg-hover:        var(--color-primary-subtle);
+--btn-text:            #FFFFFF;
+--btn-padding-y:       14px;
+--btn-padding-x:       28px;
+--btn-radius:          var(--border-radius);
+--btn-font-size:       var(--text-sm);
+--btn-font-weight:     600;
+--btn-letter-spacing:  0.02em;
+--btn-transition:      var(--duration-base);
+
+/* Secondary / ghost variant */
+--btn-ghost-text:      var(--color-primary);
+--btn-ghost-border:    var(--color-primary);
+--btn-ghost-bg-hover:  var(--color-primary-tint);
+
+/* Destructive variant — for delete/cancel actions */
+--btn-danger-bg:       var(--color-danger);
+--btn-danger-bg-hover: #A32D2D;
+
+  /* ── Typography ──────────────────────────────────────────────── */
+  --font-display: 'Cabinet Grotesk', Georgia, serif;
+  --font-body: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+
+  /* Type scale — minor third (×1.25) */
+  --text-xs:  0.75rem;    /* 12px — labels, eyebrows, captions */
+  --text-sm:  0.875rem;   /* 14px — UI, buttons, nav */
+  --text-md:  1rem;       /* 16px — body */
+  --text-lg:  1.25rem;    /* 20px — lead paragraphs */
+  --text-xl:  1.563rem;   /* 25px — section subheads */
+  --text-2xl: 1.953rem;   /* 31px — h3 */
+  --text-3xl: 2.441rem;   /* 39px — h2 */
+  --text-4xl: 3.052rem;   /* 49px — h1 small viewport */
+  /* Hero display: clamp() in component for fluid sizing */
+
+  /* ── Spacing — geometric scale (×1.5) ───────────────────────── */
+  --space-xs:  0.25rem;   /* 4px */
+  --space-sm:  0.5rem;    /* 8px */
+  --space-md:  1rem;      /* 16px */
+  --space-lg:  1.5rem;    /* 24px */
+  --space-xl:  2.25rem;   /* 36px */
+  --space-2xl: 3.375rem;  /* 54px */
+  --space-3xl: 5rem;      /* 80px */
+
+  /* ── Layout ──────────────────────────────────────────────────── */
+  --max-width:        1280px;
+  --max-width-md:     900px;
+  --border-radius:    4px;
+  --border-radius-lg: 12px;
+
+  /* ── Motion ──────────────────────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   DARK MODE — opt-in via JS toggle
+   Toggle with: document.documentElement.setAttribute('data-theme', 'dark')
+   Remove with: document.documentElement.removeAttribute('data-theme')
+   Only semantic tokens override here — palette stays untouched.
+   The warm off-white bg stays as the default; dark is an option.
+   ════════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  /* Primary shifts slightly lighter for contrast on dark bg */
+  --color-primary:         var(--lhd-persian-light);
+  --color-primary-hover:   var(--lhd-persian-500);
+  --color-primary-tint:    rgba(63, 32, 206, 0.2);    /* dark-safe tint */
+  --color-primary-tint-md: rgba(63, 32, 206, 0.35);
+
+  /* Brand orange — stays readable, no shift needed */
+  --color-brand:           var(--lhd-orange-light);
+  --color-brand-hover:     var(--lhd-orange-500);
+
+  /* Surfaces */
+  --color-bg:              var(--lhd-dark-950);
+  --color-surface:         var(--lhd-dark-900);
+  --color-border:          var(--lhd-dark-700);
+
+  /* Section backgrounds remain the same — they're intentional brand moments */
+  /* --color-section-blue / --color-section-orange / --color-section-dark unchanged */
+
+  /* Text */
+  --color-text-primary:    var(--lhd-dark-50);
+  --color-text-muted:      var(--lhd-dark-400);
+
+  /* Logo lightens slightly in dark mode for contrast */
+--color-logo:            var(--lhd-persian-light);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   LAYER 3 — BASE RESET
+   Global defaults wired to semantic tokens only.
+   No hex values below this line.
+   ════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  font-size: var(--text-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* Focus ring — accessible, on-brand */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
