@@ -20,17 +20,7 @@ export default function WorkPage() {
         paddingInline: 'var(--space-lg)',
       }}>
         <div style={{ maxWidth: 'var(--max-width)', marginInline: 'auto' }}>
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: 'var(--text-xs)',
-            fontWeight: 500,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color: 'var(--lhd-dark-400)',
-            marginBottom: 'var(--space-sm)',
-          }}>
-            Liam Hilton Designs
-          </p>
+          
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
