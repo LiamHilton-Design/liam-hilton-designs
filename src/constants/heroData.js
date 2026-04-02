@@ -17,7 +17,7 @@
 
 export const heroData = {
 
-  eyebrow: 'Web Design Studio · Byron Bay',
+  eyebrow: 'Web Design Studio · Byron Bay & remote',
 
   headline: {
     lines: [

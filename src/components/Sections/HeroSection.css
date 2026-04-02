@@ -196,18 +196,23 @@
   background-color: var(--color-primary-tint);
 }
 
-/* ─── Scroll indicator ────────────────────────────────────────────────────── */
+/* 
+ * SCROLL INDICATOR — updated rules only
+ * Replace the existing .hero__scroll-indicator rules in HeroSection.css
+ *
+ * Now that the scroll indicator is inside hero__content and flows
+ * naturally, we remove position:absolute entirely.
+ * It sits below the CTAs like any normal flex child.
+ * No bottom/left/transform needed.
+ */
 
-.hero__scroll-indicator {
-  position: absolute;
-  bottom: var(--space-2xl);  /* was var(--space-xl) — pushes it higher */
-  left: 50%;
-  transform: translateX(-50%);
+ .hero__scroll-indicator {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  z-index: 2;
+  /* No position:absolute — flows naturally in the content column */
+  padding-top: var(--space-md);
 }
 
 .hero__scroll-line {
@@ -216,11 +221,6 @@
   height: 40px;
   background: linear-gradient(to bottom, var(--color-primary), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
-}
-@media (min-height: 800px) {
-  .hero__scroll-indicator {
-    bottom: var(--space-3xl);
-  }
 }
 
 @keyframes scrollPulse {
@@ -236,6 +236,12 @@
   color: var(--color-text-muted);
   font-weight: 500;
 }
+
+/*
+ * Remove any existing media queries for .hero__scroll-indicator
+ * including the min-height: 800px one we added earlier.
+ * They're no longer needed since the element flows naturally.
+ */
 
 /* ─── Mobile ──────────────────────────────────────────────────────────────── */
 
