@@ -17,8 +17,7 @@
 
 export const heroData = {
 
-  eyebrow: 'Web Design Studio · Byron Bay & remote',
-
+  eyebrow: 'Web Design · Byron Bay\u00A0&\u00A0Remote',  
   headline: {
     lines: [
       'Your competitors have a website.',
