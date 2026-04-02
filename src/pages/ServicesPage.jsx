@@ -4,10 +4,12 @@
  */
 
 import ServicesSection from '../components/Sections/ServicesSection'
+import AnimatedGrid from '../components/Sections/AnimatedGrid'
 
 export default function ServicesPage() {
   return (
     <>
+
       <div style={{
         background: 'var(--color-bg)',
         paddingTop: '120px',
@@ -36,9 +38,13 @@ export default function ServicesPage() {
           }}>
             Services
           </h1>
+          
         </div>
       </div>
       <ServicesSection />
+      <AnimatedGrid />
+
+      
     </>
   )
 }
