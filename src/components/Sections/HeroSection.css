@@ -185,7 +185,7 @@
   text-decoration: none;
   padding: 14px 28px;
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-border);
+  border: 1.5px solid var(--color-border);  /* was 1px */
   letter-spacing: 0.01em;
   transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
@@ -200,7 +200,7 @@
 
 .hero__scroll-indicator {
   position: absolute;
-  bottom: var(--space-md);
+  bottom: var(--space-2xl);  /* was var(--space-xl) — pushes it higher */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -216,6 +216,11 @@
   height: 40px;
   background: linear-gradient(to bottom, var(--color-primary), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
+}
+@media (min-height: 800px) {
+  .hero__scroll-indicator {
+    bottom: var(--space-3xl);
+  }
 }
 
 @keyframes scrollPulse {

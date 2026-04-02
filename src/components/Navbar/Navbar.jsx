@@ -279,7 +279,7 @@ function MobileMenu({ isOpen, onClose }) {
             <span className="navbar__availability-dot" aria-hidden="true" />
             <span>Available for new projects</span>
             <span className="navbar__mobile-footer-divider" aria-hidden="true" />
-            <span className="navbar__mobile-footer-location"> · Remote</span>
+            <span className="navbar__mobile-footer-location"> · Byron</span>
           </motion.div>
 
         </motion.div>

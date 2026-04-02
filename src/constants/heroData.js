@@ -17,7 +17,7 @@
 
 export const heroData = {
 
-  eyebrow: 'Web Design Studio · Byron & Remote',
+  eyebrow: 'Web Design Studio · Byron Bay',
 
   headline: {
     lines: [
@@ -28,8 +28,8 @@ export const heroData = {
 
   subheadline:
     'Strategic web design and SEO for businesses that refuse to be ' +
-    'invisible. We build sites that rank on Google and turn visitors ' +
-    'into paying clients.',
+    'invisible. I build sites that rank on Google and turn visitors ' +
+    'into paying\u00A0clients.',
 
   cta: {
     primary: {
