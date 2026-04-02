@@ -1,6 +1,8 @@
 import { useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { heroData } from '../../constants/heroData'
+import { Link } from 'react-router-dom'
+
 import AnimatedGrid from './AnimatedGrid'
 import './HeroSection.css'
 
@@ -98,13 +100,21 @@ function CTAGroup({ primary, secondary }) {
       role="group"
       aria-label="Primary actions"
     >
-      <a href={primary.href} className="hero__cta-primary" aria-label={primary.ariaLabel}>
+      <Link
+        to={primary.href}
+        className="hero__cta-primary"
+        aria-label={primary.ariaLabel}
+      >
         <span>{primary.label}</span>
         <span className="hero__cta-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href={secondary.href} className="hero__cta-secondary" aria-label={secondary.ariaLabel}>
+      </Link>
+      <Link
+        to={secondary.href}
+        className="hero__cta-secondary"
+        aria-label={secondary.ariaLabel}
+      >
         {secondary.label}
-      </a>
+      </Link>
     </motion.div>
   )
 }

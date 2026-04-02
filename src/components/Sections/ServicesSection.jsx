@@ -227,7 +227,7 @@ function CalendlyCTA() {
           className="services__cta-btn services__cta-btn--secondary"
           aria-label="View our portfolio and case studies"
         >
-          See my first
+          See work first
         </a>
       </div>
 
