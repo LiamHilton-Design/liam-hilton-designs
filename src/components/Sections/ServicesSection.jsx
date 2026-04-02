@@ -51,6 +51,8 @@
 
 import { motion } from 'framer-motion'
 import { servicesData } from '../../constants/servicesData'
+import { Link } from 'react-router-dom'
+
 import './ServiceSection.css'
 
 // Replace with your actual Calendly URL
@@ -137,14 +139,14 @@ function ServiceCard({ service, index }) {
       </ul>
 
       {/* Learn more link */}
-      <a
-        href={service.href}
-        className="service-card__link"
-        aria-label={`Learn more about ${service.name}`}
-      >
-        <span>Learn more</span>
-        <span aria-hidden="true">→</span>
-      </a>
+      <Link
+  to={service.href}
+  className="service-card__link"
+  aria-label={`Learn more about ${service.name}`}
+>
+  <span>Learn more</span>
+  <span aria-hidden="true">→</span>
+</Link>
     </motion.article>
   )
 }
