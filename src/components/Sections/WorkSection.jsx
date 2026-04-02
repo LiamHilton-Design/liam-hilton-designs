@@ -191,7 +191,7 @@ function ProjectRow({ project, index }) {
  * Services explains → left-aligned, document feel.
  * Work proves → split, editorial, magazine feel.
  *
- * The visual principle: the more confident you are in your work,
+ * The visual principle: the more confident you are in my work,
  * the more space you give it to breathe. A centred or left-heavy
  * header crowds the work. A split header frames it.
  */

@@ -45,7 +45,7 @@
  *
  * 7. NEXT PROJECT NAVIGATION
  *    Bottom of the page: the next case study.
- *    Keeps visitors moving through your work rather than bouncing back
+ *    Keeps visitors moving through my work rather than bouncing back
  *    to the homepage. Each case study feeds the next one.
  *
  * 8. STICKY BACK BUTTON

@@ -159,7 +159,7 @@ function SectionHeader() {
       {/* Eyebrow — index pattern at section level */}
       <div className="services__eyebrow">
         <span className="services__eyebrow-index" aria-hidden="true">02</span>
-        <span>What we do</span>
+        <span>What I do</span>
       </div>
 
       <h2 className="services__headline">
@@ -227,7 +227,7 @@ function CalendlyCTA() {
           className="services__cta-btn services__cta-btn--secondary"
           aria-label="View our portfolio and case studies"
         >
-          See our work first
+          See my first
         </a>
       </div>
 

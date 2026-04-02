@@ -234,7 +234,7 @@ export default function ProcessSection() {
     <section
       className="process"
       role="region"
-      aria-label="Our process"
+      aria-label="My process"
       id="process"
     >
       <div className="process__container">

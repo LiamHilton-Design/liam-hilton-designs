@@ -25,7 +25,7 @@ export const servicesData = [
       tag: 'Web Design',
       hook: 'Not just beautiful — engineered to turn every visitor into a lead.',
       description:
-        'Most websites look great and do nothing. We build custom websites ' +
+        'Most websites look great and do nothing. I build custom websites ' +
         'that are designed around your business goals — every layout decision, ' +
         'every call to action, every line of copy exists to move your visitor ' +
         'one step closer to becoming a paying client.',
@@ -46,7 +46,7 @@ export const servicesData = [
       hook: 'Ranked on Google before your competitors know what hit them.',
       description:
         'Getting found on Google is not luck — it is strategy, structure, ' +
-        'and consistency. We build SEO into every website from day one: ' +
+        'and consistency. I build SEO into every website from day one: ' +
         'semantic HTML, keyword architecture, schema markup, and a content ' +
         'strategy that compounds over time. Your site works while you sleep.',
       deliverables: [
@@ -66,7 +66,7 @@ export const servicesData = [
       hook: 'A visual language so distinctive clients recognise you before they read a word.',
       description:
         'Your brand is not your logo — it is the feeling someone gets ' +
-        'the moment they encounter your business. We build brand identities ' +
+        'the moment they encounter your business. I build brand identities ' +
         'that communicate who you are instantly: the typography, colour system, ' +
         'visual language, and design principles that make you impossible to ignore ' +
         'and impossible to confuse with anyone else.',

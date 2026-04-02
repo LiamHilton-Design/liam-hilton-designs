@@ -32,7 +32,7 @@ export const heroData = {
 
   cta: {
     primary: {
-      label: 'See our work',
+      label: 'See my work',
       href: '/work',
       ariaLabel: 'View Liam Hilton Designs portfolio and case studies',
     },

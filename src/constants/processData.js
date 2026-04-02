@@ -19,7 +19,7 @@ export const processData = [
       title: 'Discover',
       duration: 'Week 1',
       description:
-        'We start by understanding your business deeply — your goals, ' +
+        'I start by understanding your business deeply — your goals, ' +
         'your customers, your competitors, and what success looks like ' +
         'for you. No assumptions. No templates. Just listening.',
       deliverables: [
@@ -37,7 +37,7 @@ export const processData = [
         'Before a single pixel is designed, we map the full plan. ' +
         'Sitemap, user journey, SEO keyword architecture, and a ' +
         'wireframe that shows you exactly what you\'re getting — ' +
-        'before we build it.',
+        'before i it.',
       deliverables: [
         'Sitemap and page structure',
         'Wireframes for key pages',
@@ -50,7 +50,7 @@ export const processData = [
       title: 'Design & Build',
       duration: 'Week 2–5',
       description:
-        'This is where it comes to life. We design and build ' +
+        'This is where it comes to life. I and build ' +
         'simultaneously — you see real progress every week, not ' +
         'a big reveal at the end. Two rounds of revisions included. ' +
         'You\'re never left wondering what\'s happening.',
@@ -66,7 +66,7 @@ export const processData = [
       title: 'Launch & Grow',
       duration: 'Week 5–6+',
       description:
-        'Launch day is the beginning, not the end. We handle the ' +
+        'Launch day is the beginning, not the end. I the ' +
         'technical deployment, set up your analytics, submit to ' +
         'Google, and give you a handoff session so you know ' +
         'exactly how to use and update your new site.',
