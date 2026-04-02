@@ -37,7 +37,7 @@ export const servicesData = [
         'Google Analytics and Search Console setup',
         'Ongoing support and updates',
       ],
-      href: '/services/web-design',
+      href: '/contact',
     },
     {
       id: 'seo',
@@ -57,7 +57,7 @@ export const servicesData = [
         'AI search optimisation (AEO) for Google AI Overview',
         'Monthly ranking reports and recommendations',
       ],
-      href: '/services/seo',
+      href: '/contact',
     },
     {
       id: 'brand',
@@ -78,6 +78,6 @@ export const servicesData = [
         'Social media asset templates',
         'Brand implementation across your website',
       ],
-      href: '/services/brand-identity',
+      href: '/contact',
     },
   ]
