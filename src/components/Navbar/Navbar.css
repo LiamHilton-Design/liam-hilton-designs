@@ -317,6 +317,11 @@
    * This is intentional. The logo and hamburger must always
    * remain visible above the overlay.
    */
+   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100dvh;   /* dvh accounts for mobile browser chrome */
   z-index: 99;
   display: flex;
   flex-direction: column;
