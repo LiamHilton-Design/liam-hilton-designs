@@ -660,13 +660,31 @@
   /* ─── Mobile ──────────────────────────────────────────────────────────────── */
   
   @media (max-width: 640px) {
-    .cs-devices {
-      gap: var(--space-md);
-      min-height: 280px;
+    .cs-device--desktop {
+      width: 100%;
+      max-width: 100%;
     }
-    .cs-device--tablet { width: 140px; transform: translateY(-30px); }
-    .cs-device--mobile { width: 80px;  transform: translateY(-55px); }
-    .cs-back { top: 16px; left: 16px; }
+    .cs-device__frame--desktop {
+      width: 100%;
+    }
+    .cs-device__screen {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+    .cs-devices {
+      flex-direction: column;
+      align-items: stretch;   /* stretch instead of center */
+      min-height: auto;
+      gap: 0;
+    }
+    .cs-device--tablet,
+    .cs-device--mobile {
+      display: none;
+    }
+    .cs-back {
+      top: 16px;
+      left: 12px;
+    }
   }
   
   /* ─── Reduced motion ──────────────────────────────────────────────────────── */
