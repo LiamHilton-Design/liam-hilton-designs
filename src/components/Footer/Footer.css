@@ -155,6 +155,19 @@
     max-width: 46ch;
     margin: 0;
   }
+
+  /* Hide logo on mobile — already in navbar */
+@media (max-width: 640px) {
+  .footer__logo {
+    display: none;
+  }
+
+  .footer__top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
   
   /* ─── Form ────────────────────────────────────────────────────────────────── */
   
@@ -210,7 +223,8 @@ appearance: none;
   
   .footer__input::placeholder,
   .footer__textarea::placeholder {
-    color: var(--lhd-dark-700);
+    color: var(--lhd-dark-400);
+    opacity: 0.5;
   }
   
   .footer__input:focus,

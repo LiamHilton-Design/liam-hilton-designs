@@ -266,9 +266,9 @@ export default function Footer() {
 
         {/* ── Top bar ─────────────────────────────────────────────── */}
         <div className="footer__top">
-          <Link to="/" className="footer__logo" aria-label="Liam Hilton Designs — home">
+          {/* <Link to="/" className="footer__logo" aria-label="Liam Hilton Designs — home">
             <Logo className="footer__logo-img" color="currentColor" />
-          </Link>
+          </Link> */}
 
           {/* Availability status */}
           <div className="footer__availability" aria-label="Current availability">
@@ -350,14 +350,8 @@ export default function Footer() {
           <p className="footer__copyright">
             © {currentYear} Liam Hilton Designs. All rights reserved.
           </p>
-          <div className="footer__legal">
-            <a href="/privacy" className="footer__legal-link">Privacy policy</a>
-            <span aria-hidden="true">·</span>
-            <a href="/terms" className="footer__legal-link">Terms</a>
           </div>
         </div>
-
-      </div>
     </footer>
   )
 }
