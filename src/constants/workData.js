@@ -51,7 +51,7 @@ export const workData = [
     title: 'FORGED',
     category: 'Fitness & Wellness',
     status: 'live',
-    year: '2024',
+    year: '2025',
     result: 'Mobile-first React site with class booking',
     shortDescription:
       'A performance-focused fitness studio website built in React. ' +
@@ -62,7 +62,7 @@ export const workData = [
     externalHref: 'https://forged-gym.vercel.app',
     placeholder: '#0a0a0a',        /* FORGED dark background */
     accentColor: '#C4DE19',        /* FORGED primary green */
-    heroImage: forgedDesktop,
+
   
 
   },

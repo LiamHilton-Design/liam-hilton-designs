@@ -98,7 +98,7 @@ export const caseStudyData = {
         { value: '100%',  label: 'Mobile responsive'    },
         { value: 'React', label: 'Built with'           },
         { value: 'Fast',  label: 'Core Web Vitals'      },
-        { value: '2024',  label: 'Completed'            },
+        { value: '2025',  label: 'Completed'            },
       ],
       sections: [
         {

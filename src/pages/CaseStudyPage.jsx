@@ -4,12 +4,13 @@
  *
  * CREATIVE ENGINEERING DECISIONS:
  *
- * 1. FULL-BLEED HERO WITH PROJECT COLOUR
+ * 1. FULL-BLEED HERO WITH PROJECT PHOTOGRAPHY
  *    Each case study opens with a full-viewport hero using the project's
- *    own accentColor as the background. The visitor is immediately inside
- *    the project's world — not looking at a generic page template.
- *    The project number floats large and ghosted behind the title.
- *    Same ghost number technique as the Work section, scaled up dramatically.
+ *    own screenshot as the background at low opacity. The visitor is
+ *    immediately inside the project's world — not looking at a generic
+ *    page template. The project number floats large and ghosted behind
+ *    the title. Same ghost number technique as the Work section, scaled
+ *    up dramatically.
  *
  * 2. READING PROGRESS BAR
  *    A 2px line at the top of the viewport fills as the user scrolls.
@@ -27,7 +28,6 @@
  *    Desktop, tablet, mobile — floating at different heights.
  *    The vertical offset creates depth — the devices don't sit in a grid,
  *    they exist in space. CSS transforms handle this, no JS needed.
- *    When real screenshots exist, swap the placeholder divs for <img> tags.
  *
  * 5. CHALLENGE / APPROACH / OUTCOME STRUCTURE
  *    Every case study tells the same story: here's what was broken,
@@ -68,24 +68,10 @@ import { workData } from '../constants/workData'
 import { caseStudyData } from '../constants/caseStudyData'
 import './CaseStudyPage.css'
 
-// ─── Reading progress hook ────────────────────────────────────────────────────
+// ── Reading progress hook ─────────────────────────────────────
+// Tracks scroll depth 0–100. Reusable anywhere in the app.
+// ─────────────────────────────────────────────────────────────
 
-/**
- * useScrollProgress
- *
- * Tracks how far the user has scrolled through the document.
- * Returns a value from 0 to 100 (percentage).
- *
- * The calculation:
- * scrollTop = how far from the top the user has scrolled
- * scrollHeight = total document height
- * clientHeight = visible viewport height
- * (scrollHeight - clientHeight) = maximum scrollable distance
- *
- * This is a custom hook — a function starting with 'use' that
- * contains React hook calls. Extracting this logic from the component
- * keeps the component clean and makes the hook reusable anywhere.
- */
 function useScrollProgress() {
   const [progress, setProgress] = useState(0)
 
@@ -96,7 +82,6 @@ function useScrollProgress() {
       const total = el.scrollHeight - el.clientHeight
       setProgress(total > 0 ? (scrolled / total) * 100 : 0)
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -104,7 +89,10 @@ function useScrollProgress() {
   return progress
 }
 
-// ─── Scroll to top on mount ───────────────────────────────────────────────────
+// ── Scroll to top on mount ────────────────────────────────────
+// Ensures every case study opens at the top regardless of
+// scroll position on the previous page.
+// ─────────────────────────────────────────────────────────────
 
 function useScrollToTop() {
   useEffect(() => {
@@ -112,7 +100,7 @@ function useScrollToTop() {
   }, [])
 }
 
-// ─── 404 state ────────────────────────────────────────────────────────────────
+// ── 404 state ─────────────────────────────────────────────────
 
 function NotFound() {
   return (
@@ -129,7 +117,10 @@ function NotFound() {
   )
 }
 
-// ─── Progress bar ─────────────────────────────────────────────────────────────
+// ── Progress bar ──────────────────────────────────────────────
+// Fixed 2px line at top of viewport.
+// accentColor makes each case study feel unique.
+// ─────────────────────────────────────────────────────────────
 
 function ProgressBar({ accentColor }) {
   const progress = useScrollProgress()
@@ -154,7 +145,10 @@ function ProgressBar({ accentColor }) {
   )
 }
 
-// ─── Back button ──────────────────────────────────────────────────────────────
+// ── Back button ───────────────────────────────────────────────
+// Fixed top-left. Uses navigate(-1) so it works from any
+// entry point — homepage, work page, direct URL.
+// ─────────────────────────────────────────────────────────────
 
 function BackButton() {
   const navigate = useNavigate()
@@ -172,16 +166,30 @@ function BackButton() {
   )
 }
 
-// ─── Hero section ─────────────────────────────────────────────────────────────
+// ── Hero section ──────────────────────────────────────────────
+// Background: project screenshot at low opacity over dark base.
+// Falls back to placeholder colour if no heroImage is set.
+// Content sits above via z-index layering.
+// ─────────────────────────────────────────────────────────────
 
 function CaseStudyHero({ project, study }) {
   return (
     <section
       className="cs-hero"
-      style={{ backgroundColor: project.placeholder }}
+      style={{
+        backgroundColor: project.placeholder,
+        backgroundImage: project.heroImage
+          ? `url(${project.heroImage})`
+          : 'none',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+      }}
       aria-label={`${project.title} — case study hero`}
     >
-      {/* Ghost project number — large decorative */}
+      {/* Dark overlay — keeps text readable over the screenshot */}
+      <div className="cs-hero__overlay" />
+
+      {/* Ghost project number — large decorative, sits behind content */}
       <span className="cs-hero__ghost-num" aria-hidden="true">
         {String(
           workData.findIndex(p => p.id === project.id) + 1
@@ -213,7 +221,7 @@ function CaseStudyHero({ project, study }) {
             </span>
           </div>
 
-          {/* Result — the outcome, shown first */}
+          {/* Result — outcome shown first, not the project name */}
           <p
             className="cs-hero__result"
             style={{ color: project.accentColor }}
@@ -234,10 +242,10 @@ function CaseStudyHero({ project, study }) {
             ))}
           </div>
 
-          {/* External link if live */}
+          {/* External link — only rendered if project is live */}
           {project.externalHref && (
-            <a
-              href={project.externalHref}
+            
+             <a href={project.externalHref}
               className="cs-hero__live-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -257,16 +265,12 @@ function CaseStudyHero({ project, study }) {
   )
 }
 
-// ─── Metrics strip ────────────────────────────────────────────────────────────
+// ── Metrics strip ─────────────────────────────────────────────
+// Most-read element on any case study.
+// 3-4 outcome numbers between hero and body.
+// Returns null if no metrics are provided.
+// ─────────────────────────────────────────────────────────────
 
-/**
- * MetricsStrip
- *
- * The most-read element on any case study.
- * 3-4 specific numbers that answer: "what changed?"
- * Dark background creates a visual break between hero and body.
- * The accentColor bleeds in via the metric values.
- */
 function MetricsStrip({ metrics, accentColor }) {
   if (!metrics?.length) return null
 
@@ -293,21 +297,12 @@ function MetricsStrip({ metrics, accentColor }) {
   )
 }
 
-// ─── Device mockup row ────────────────────────────────────────────────────────
+// ── Device mockups ────────────────────────────────────────────
+// Desktop, tablet, mobile at staggered heights.
+// Vertical offset creates depth — devices exist in space.
+// CSS transforms handle stagger, no JS needed.
+// ─────────────────────────────────────────────────────────────
 
-/**
- * DeviceMockups
- *
- * Three devices at staggered heights — desktop, tablet, mobile.
- * The vertical offset creates depth: devices exist in space, not a grid.
- * CSS transforms handle the stagger — translateY on each device.
- *
- * Placeholder coloured divs show the layout until real screenshots are ready.
- * Swap for <img> tags when mockups are created:
- *
- * Replace: <div className="cs-device__screen" style={{ backgroundColor: ... }} />
- * With:    <img src={images.desktop} alt={`${title} — desktop`} loading="lazy" />
- */
 function DeviceMockups({ project, images }) {
   const bg = project.placeholder
 
@@ -320,7 +315,7 @@ function DeviceMockups({ project, images }) {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       aria-label={`${project.title} — device previews`}
     >
-      {/* Desktop */}
+      {/* ── Desktop ───────────────────────────────────────── */}
       <div className="cs-device cs-device--desktop">
         <div className="cs-device__frame cs-device__frame--desktop">
           <div className="cs-device__bar">
@@ -339,7 +334,7 @@ function DeviceMockups({ project, images }) {
         </div>
       </div>
 
-      {/* Tablet */}
+      {/* ── Tablet ────────────────────────────────────────── */}
       <div className="cs-device cs-device--tablet">
         <div className="cs-device__frame cs-device__frame--tablet">
           <div
@@ -355,7 +350,7 @@ function DeviceMockups({ project, images }) {
         </div>
       </div>
 
-      {/* Mobile */}
+      {/* ── Mobile ────────────────────────────────────────── */}
       <div className="cs-device cs-device--mobile">
         <div className="cs-device__frame cs-device__frame--mobile">
           <div className="cs-device__notch" aria-hidden="true" />
@@ -375,16 +370,12 @@ function DeviceMockups({ project, images }) {
   )
 }
 
-// ─── Case study body ──────────────────────────────────────────────────────────
+// ── Case study body ───────────────────────────────────────────
+// Challenge / Approach / Outcome.
+// Each section animates in as it enters the viewport.
+// Section label anchors the block before the reader hits content.
+// ─────────────────────────────────────────────────────────────
 
-/**
- * CaseStudyBody
- *
- * Challenge / Approach / Outcome — the universal case study structure.
- * Each section animates in independently as it enters the viewport.
- * The section label (small caps) anchors each block before the reader
- * hits the content — same index pattern applied to editorial structure.
- */
 function BodySection({ label, headline, body, index }) {
   return (
     <motion.div
@@ -412,18 +403,11 @@ function BodySection({ label, headline, body, index }) {
   )
 }
 
-// ─── Next project ─────────────────────────────────────────────────────────────
+// ── Next project ──────────────────────────────────────────────
+// Keeps visitors moving through the portfolio.
+// Wraps to first project from the last — circular navigation.
+// ─────────────────────────────────────────────────────────────
 
-/**
- * NextProject
- *
- * The final element before the footer.
- * Keeps the visitor in the portfolio rather than bouncing back.
- * Uses the next project's accentColor as a hover tint — every transition
- * feels intentional rather than generic.
- *
- * Wraps around to the first project from the last — circular navigation.
- */
 function NextProject({ currentId }) {
   const currentIndex = workData.findIndex(p => p.id === currentId)
   const nextProject = workData[(currentIndex + 1) % workData.length]
@@ -464,20 +448,15 @@ function NextProject({ currentId }) {
   )
 }
 
-// ─── Main page component ──────────────────────────────────────────────────────
+// ── Main page component ───────────────────────────────────────
 
 export default function CaseStudyPage() {
   useScrollToTop()
 
   const { id } = useParams()
-
-  // Find project in workData
   const project = workData.find(p => p.id === id)
-
-  // Find extended case study content (challenge/approach/outcome/metrics)
   const study = caseStudyData[id]
 
-  // 404 — project not found
   if (!project) return <NotFound />
 
   return (
@@ -488,7 +467,7 @@ export default function CaseStudyPage() {
       {/* Back button — fixed top-left */}
       <BackButton />
 
-      {/* Hero */}
+      {/* Hero — screenshot background, content overlay */}
       <CaseStudyHero project={project} study={study} />
 
       {/* Metrics strip */}
@@ -508,10 +487,7 @@ export default function CaseStudyPage() {
 
       {/* Body — challenge / approach / outcome */}
       {study?.sections && (
-        <section
-          className="cs-body"
-          aria-label="Case study details"
-        >
+        <section className="cs-body" aria-label="Case study details">
           <div className="cs-body__container">
             {study.sections.map((section, i) => (
               <BodySection
