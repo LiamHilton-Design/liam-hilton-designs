@@ -68,6 +68,8 @@ import { workData } from '../constants/workData'
 import { caseStudyData } from '../constants/caseStudyData'
 import './CaseStudyPage.css'
 
+
+
 // ── Reading progress hook ─────────────────────────────────────
 // Tracks scroll depth 0–100. Reusable anywhere in the app.
 // ─────────────────────────────────────────────────────────────
@@ -478,12 +480,13 @@ export default function CaseStudyPage() {
         />
       )}
 
-      {/* Device mockups */}
-      <section className="cs-devices-section" aria-label="Project previews">
-        <div className="cs-devices-container">
-          <DeviceMockups project={project} images={study?.images} />
-        </div>
-      </section>
+{/* Device mockups */}
+<section className="cs-devices-section" aria-label="Project previews">
+  <div className="cs-devices-container">
+    <DeviceMockups project={project} images={study?.images} />
+  </div>
+</section>
+
 
       {/* Body — challenge / approach / outcome */}
       {study?.sections && (

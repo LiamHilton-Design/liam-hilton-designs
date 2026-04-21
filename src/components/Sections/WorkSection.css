@@ -238,11 +238,24 @@
 .work__project:hover .work__project-image img {
   transform: scale(1.04);
 }
+.work__project-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.80) 0%,   /* ← increase this value */
+    rgba(0, 0, 0, 0.2) 100%   /* ← and this one */
+  );
+  z-index: 0;
+}
 
 .work__project-num {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
+   position: absolute;
+  top: 1.5rem;      /* ← was bottom */
+  right: 1.5rem;    /* ← was left */
+  bottom: auto;     /* ← cancel any existing bottom value */
+  left: auto;       /* ← cancel any existing left value */
   font-family: var(--font-display);
   font-size: 4rem;
   font-weight: 800;
@@ -250,6 +263,7 @@
   color: rgba(255, 255, 255, 0.08);
   line-height: 1;
   user-select: none;
+  z-index: 1;
 }
 
 .work__project-tags {

@@ -62,6 +62,7 @@ export const workData = [
     externalHref: 'https://forged-gym.vercel.app',
     placeholder: '#0a0a0a',        /* FORGED dark background */
     accentColor: '#C4DE19',        /* FORGED primary green */
+    heroImage: forgedDesktop,
 
   
 

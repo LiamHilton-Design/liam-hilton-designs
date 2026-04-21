@@ -115,11 +115,18 @@ function ProjectRow({ project, index }) {
     >
       {/* Image */}
       <div className="work__project-image-wrap">
-        <div
-          className="work__project-image"
-          style={{ backgroundColor: project.placeholder }}
-          aria-label={`${project.title} preview`}
-        >
+      <div
+  className="work__project-image"
+  style={{
+    backgroundColor: project.placeholder,
+    backgroundImage: project.heroImage
+      ? `url(${project.heroImage})`
+      : 'none',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center top',
+  }}
+  aria-label={`${project.title} preview`}
+>
           <span className="work__project-num" aria-hidden="true">
             {String(index + 1).padStart(2, '0')}
           </span>
