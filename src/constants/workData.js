@@ -23,6 +23,11 @@
  * overlay remains legible.
  */
 
+import forgedDesktop from '../assets/case-studies/forged/desktop.png'
+import forgedTablet from '../assets/case-studies/forged/tablet.png'
+import forgedMobile from '../assets/case-studies/forged/mobile.png'
+
+
 export const workData = [
   {
     id: 'lhd-portfolio',
@@ -43,7 +48,7 @@ export const workData = [
   },
   {
     id: 'fitness-studio',
-    title: 'Gym & Yoga Studio',
+    title: 'FORGED',
     category: 'Fitness & Wellness',
     status: 'live',
     year: '2024',
@@ -55,8 +60,11 @@ export const workData = [
     tags: ['React', 'Responsive', 'Local SEO'],
     href: '/work/fitness-studio',
     externalHref: 'https://forged-gym.vercel.app',
-    placeholder: '#1f0d03',     /* Deep warm — orange family darkened */
-    accentColor: '#FF8B62',     /* --lhd-orange-light */
+    placeholder: '#0a0a0a',        /* FORGED dark background */
+    accentColor: '#C4DE19',        /* FORGED primary green */
+    heroImage: forgedDesktop,
+  
+
   },
   {
     id: 'coastal-cafe',

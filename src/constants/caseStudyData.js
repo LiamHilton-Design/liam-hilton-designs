@@ -34,6 +34,10 @@
  * The client reading this should think "that sounds exactly like me."
  */
 
+import forgedDesktop from '../assets/case-studies/forged/desktop.png'
+import forgedTablet from '../assets/case-studies/forged/tablet.png'
+import forgedMobile from '../assets/case-studies/forged/mobile.png'
+
 export const caseStudyData = {
 
     'lhd-portfolio': {
@@ -99,7 +103,7 @@ export const caseStudyData = {
       sections: [
         {
           label: 'The challenge',
-          headline: 'A fitness studio with no digital presence in a crowded local market.',
+          headline: 'A fitness brand with no digital presence in a competitive market.',
           body:
             'The business had a strong reputation built entirely on word of mouth. ' +
             'Classes were full but new members were hard to attract — ' +
@@ -109,7 +113,7 @@ export const caseStudyData = {
         },
         {
           label: 'The approach',
-          headline: 'Mobile-first, local SEO structured, conversion flow designed from the first click.',
+          headline: 'Custom React architecture built for performance and conversion.',
           body:
             'More than 70% of fitness searches happen on mobile — ' +
             'so the design started at 390px and scaled up, not the other way around. ' +
@@ -122,7 +126,7 @@ export const caseStudyData = {
         },
         {
           label: 'The outcome',
-          headline: 'A site that works as hard as the clients it serves.',
+          headline: 'A fully responsive landing page QA\'d across three breakpoints.',
           body:
             'Built with React for performance and maintainability. ' +
             'The class schedule updates from a simple data file — no CMS needed, ' +
@@ -132,9 +136,9 @@ export const caseStudyData = {
         },
       ],
       images: {
-        desktop: null,
-        tablet:  null,
-        mobile:  null,
+        desktop: forgedDesktop,
+        tablet: forgedTablet,
+        mobile: forgedMobile,
       },
     },
   

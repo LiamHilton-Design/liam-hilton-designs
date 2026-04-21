@@ -244,11 +244,7 @@
  */
 
 /* ─── Mobile ──────────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .hero__scroll-indicator {
-    display: none;
-  }
-}
+
 
 
 
