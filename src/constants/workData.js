@@ -54,7 +54,7 @@ export const workData = [
       'converting browsers into booked classes.',
     tags: ['React', 'Responsive', 'Local SEO'],
     href: '/work/fitness-studio',
-    externalHref: 'https://github.com/liamhilton',
+    externalHref: 'https://forged-bq0r6gzjd-liamhilton-designs-projects.vercel.app/',
     placeholder: '#1f0d03',     /* Deep warm — orange family darkened */
     accentColor: '#FF8B62',     /* --lhd-orange-light */
   },
