@@ -244,6 +244,13 @@
  */
 
 /* ─── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero__scroll-indicator {
+    display: none;
+  }
+}
+
+
 
 @media (max-width: 480px) {
   .hero__cta-group { flex-direction: column; width: 100%; }
