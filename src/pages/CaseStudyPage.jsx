@@ -177,17 +177,12 @@ function BackButton() {
 function CaseStudyHero({ project, study }) {
   return (
     <section
-      className="cs-hero"
-      style={{
-        backgroundColor: project.placeholder,
-        backgroundImage: project.heroImage
-          ? `url(${project.heroImage})`
-          : 'none',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-      }}
-      aria-label={`${project.title} — case study hero`}
-    >
+    className="cs-hero"
+    style={{
+      backgroundColor: project.placeholder,
+    }}
+    aria-label={`${project.title} — case study hero`}
+  >
       {/* Dark overlay — keeps text readable over the screenshot */}
       <div className="cs-hero__overlay" />
 

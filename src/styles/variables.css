@@ -58,7 +58,7 @@
   --lhd-orange-lightest:  #FEF0EA;   /* very light tint for subtle warmth */
   --lhd-orange-light:     #FF8B62;   /* section backgrounds, warm highlights */
   --lhd-orange-500:       #D85A30;   /* decorative accents, eyebrow dots, stats */
-  --lhd-orange-dark:      #B84420;   /* hover on orange elements */
+  --lhd-orange-dark:      #1a1919;   /* hover on orange elements */
 
   /* Warm neutrals — all warm-tinted, never pure grey */
   --lhd-neutral-0:   #FFFFFF;
