@@ -68,37 +68,40 @@ export const workData = [
 
   },
   {
-    id: 'coastal-cafe',
-    title: 'Coastal Café',
+    id: 'okii-restaurant',
+    title: 'ŌKII Restaurant',
     category: 'Hospitality',
     status: 'concept',
-    year: '2025',
-    result: 'Webflow build — reservations + brand-led design',
+    year: '2026',
+    result: 'Dark, editorial React site — booking modal + multi-page',
     shortDescription:
-      'A concept site for an independent café built during Webflow ' +
-      'masterclass training. Menu layouts, reservation integration, ' +
-      'and a warm brand-first aesthetic.',
-    tags: ['Webflow', 'Concept', 'Hospitality'],
-    href: '/work/coastal-cafe',
-    externalHref: null,
-    placeholder: '#25103a',     /* Deep purple — brand adjacent, mysterious */
-    accentColor: '#7862DC',     /* --lhd-orange-500 */
+      'A concept restaurant website for a Japanese BBQ dining experience in Byron Bay. ' +
+      'Editorial design, cinematic photography, and Framer Motion throughout — ' +
+      'built to show hospitality clients what their digital presence could feel like.',
+    tags: ['React', 'Framer Motion', 'Responsive'],
+    href: '/work/okii-restaurant',
+    externalHref: 'https://okii-restaurant.vercel.app',
+    placeholder: '#0D0F1A',     /* --okii-midnight-950 */
+    accentColor: '#E8473F',     /* --okii-vermillion-500 */
+    heroImage: null,            /* add import once screenshots are ready */
   },
   {
-    id: 'local-trades',
-    title: 'Local Trades Co.',
-    category: 'Trades & Services',
+    id: 'formBuilders',
+    title: 'Form Builders',
+    category: 'Construction & Luxury Builds',
     status: 'concept',
-    year: '2025',
-    result: 'Lead-gen site — calls and enquiries from Google',
+    year: '2026',
+    result: 'Lead-gen site — enquiries from Google for high-end builds',
     shortDescription:
-      'A concept site targeting local tradies who need a professional ' +
-      'online presence that converts Google traffic into phone calls.',
+      'A concept site for a construction and luxury home building company. ' +
+      'Designed to rank locally, build trust with high-value clients, ' +
+      'and convert project enquiries from Google search.',
     tags: ['React', 'Local SEO', 'Lead Generation'],
-    href: '/work/local-trades',
+    href: '/work/formBuilders',
     externalHref: null,
-    placeholder: '#0d1f3a',     /* Deep navy — cool, corporate, trust */
-    accentColor: '#FF8B62',     /* --lhd-persian-500 */
+    placeholder: '#0d1a0f',     /* deep construction green — trust, craft */
+    accentColor: '#7D9E6E',     /* warm sage — premium, grounded */
+    heroImage: null,
   },
 ]
 

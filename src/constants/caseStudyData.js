@@ -142,96 +142,102 @@ export const caseStudyData = {
       },
     },
   
-    'coastal-cafe': {
+    'okii-restaurant': {
       metrics: [
-        { value: 'Webflow', label: 'Built with'          },
-        { value: '3 days',  label: 'Design to delivery'  },
-        { value: '2025',    label: 'Concept year'        },
-        { value: 'CMS',     label: 'Content managed'     },
+        { value: 'React',  label: 'Built with'              },
+        { value: '3',      label: 'Pages built'             },
+        { value: '2026',   label: 'Concept year'            },
+        { value: 'Motion', label: 'Framer Motion throughout'},
       ],
       sections: [
         {
           label: 'The challenge',
-          headline: 'Independent hospitality lives or dies by its online first impression.',
+          headline: 'High-end dining deserves a digital experience that matches the room.',
           body:
-            'An independent café competing against chains has one advantage: ' +
-            'character. The brief was to capture that character digitally — ' +
-            'to make someone looking at the website feel the warmth of the ' +
-            'space before they\'d walked through the door. ' +
-            'The secondary challenge: make it easy for the owner to update ' +
-            'the menu, specials, and events without technical knowledge.',
+            'High-end Japanese BBQ restaurants invest deeply in their physical environment — ' +
+            'lighting, material, sound, ritual. Their websites rarely follow suit. ' +
+            'Most hospitality sites lead with a reservations widget and stock photography, ' +
+            'leaving no room for the brand to breathe. ' +
+            'For a concept like ŌKII, the digital touchpoint needed to feel like the ' +
+            'first course — atmospheric, considered, and distinctly itself. ' +
+            'The brief: build a site where the visitor feels the restaurant before they book it.',
         },
         {
           label: 'The approach',
-          headline: 'Brand-led design built in Webflow for owner autonomy.',
+          headline: 'Editorial layout logic. Framer Motion throughout. Three entry points to book.',
           body:
-            'Webflow was the right choice here — not because React couldn\'t do it, ' +
-            'but because the owner needed to update content independently. ' +
-            'The CMS structure was designed before a single page was built: ' +
-            'menu items, seasonal specials, and events all as editable collections. ' +
-            'The visual design led with photography and warmth — large imagery, ' +
-            'soft warm tones, and typography that felt handcrafted without being literal.',
+            'The design started with atmosphere, not function. ' +
+            'Midnight backgrounds anchored every surface — #0D0F1A at the deepest. ' +
+            'Vermillion (#E8473F) was reserved as the single high-energy accent: ' +
+            'CTAs, active states, the logo mark. Nothing else. ' +
+            'A BookingModal accessible from three entry points — navbar, hero CTA, ' +
+            'and hamburger menu — ensures conversion is never more than one click away ' +
+            'without letting function dominate form. ' +
+            'The hamburger uses a React Portal pattern, rendering the full-viewport ' +
+            'overlay outside the component tree to eliminate z-index conflicts entirely.',
         },
         {
           label: 'The outcome',
-          headline: 'A digital space as distinctive as the physical one.',
+          headline: 'A hospitality site that sells the experience, not just the table.',
           body:
-            'The reservation form integrates with the café\'s existing booking system. ' +
-            'The menu CMS means specials update in minutes with no developer involvement. ' +
-            'The design system uses Webflow\'s native variables — ' +
-            'the same token architecture principle applied to a no-code tool. ' +
-            'This is a concept built to demonstrate what hospitality web design ' +
-            'looks like when it\'s done with genuine craft rather than a template.',
+            'Three fully animated pages — Home, Menu, and Contact — each with its own ' +
+            'distinct rhythm. Responsive across 640px, 1024px, and 1440px, ' +
+            'QA\'d at every breakpoint. Satoshi and General Sans self-hosted — ' +
+            'zero third-party font dependency, instant load on every device. ' +
+            'This concept demonstrates what hospitality web design looks like ' +
+            'when the digital experience is treated as part of the dining experience — ' +
+            'not an afterthought bolted on after the fit-out is done.',
         },
       ],
       images: {
-        desktop: null,
-        tablet:  null,
-        mobile:  null,
+        desktop: null,   /* add import: okii-hero-desktop.webp */
+        tablet:  null,   /* add import: okii-menu-desktop.webp */
+        mobile:  null,   /* add import: okii-home-mobile.webp  */
       },
     },
   
-    'local-trades': {
+    'form-builders': {
       metrics: [
-        { value: 'React',  label: 'Built with'           },
-        { value: 'Local',  label: 'SEO targeted'         },
-        { value: 'Leads',  label: 'Primary goal'         },
-        { value: '2025',   label: 'Concept year'         },
+        { value: 'React',   label: 'Built with'          },
+        { value: 'Local',   label: 'SEO targeted'        },
+        { value: 'Leads',   label: 'Primary goal'        },
+        { value: '2026',    label: 'Concept year'        },
       ],
       sections: [
         {
           label: 'The challenge',
-          headline: 'A skilled tradie invisible online while less experienced competitors win the work.',
+          headline: 'Luxury builders win work on reputation — and lose it online.',
           body:
-            'Local service businesses — plumbers, electricians, builders — ' +
-            'have a digital presence problem. They\'re often brilliant at their trade ' +
-            'and terrible at selling it online. The result: Google searches for ' +
-            '"electrician Sydney" return pages of competitors with mediocre work ' +
-            'but strong SEO, while the best tradies in the area are invisible. ' +
-            'The brief: build a site that ranks locally and converts visitors into calls.',
+            'High-end construction and luxury home building companies often rely entirely ' +
+            'on referrals and word of mouth. That works — until a potential client ' +
+            'searches Google before returning a call, finds a dated website or nothing at all, ' +
+            'and quietly moves on to a competitor. ' +
+            'The brief: build a digital presence that reflects the quality of the physical work — ' +
+            'a site that earns trust before the first conversation happens.',
         },
         {
           label: 'The approach',
-          headline: 'Local SEO architecture built into every element from day one.',
+          headline: 'Trust architecture first. Every element earns its place.',
           body:
-            'The page structure was designed around keyword research before design began. ' +
-            'Each service area gets its own page — "electrician Sydney CBD", ' +
-            '"emergency electrician Eastern Suburbs" — targeting the specific searches ' +
-            'that generate qualified leads. The homepage schema markup includes ' +
-            'LocalBusiness structured data, service area definitions, and review schema. ' +
-            'The design prioritises trust signals: licence numbers, insurance details, ' +
-            'and a click-to-call button above the fold on mobile.',
+            'The design hierarchy was built around one question: ' +
+            'what does a high-value client need to see in the first ten seconds ' +
+            'to feel confident enough to make an enquiry? ' +
+            'Completed project photography, clear service scope, credentials, ' +
+            'and a direct enquiry path — all above the fold. ' +
+            'Local SEO structure was embedded from day one: schema markup, ' +
+            'location-specific page titles, and service area definitions ' +
+            'targeting the searches that generate qualified project leads.',
         },
         {
           label: 'The outcome',
-          headline: 'A lead-generation machine disguised as a professional website.',
+          headline: 'A premium digital presence that converts serious enquiries.',
           body:
-            'Every element of this design serves one goal: phone calls and form submissions ' +
-            'from people in the service area with a genuine job to quote. ' +
-            'The contact form asks the right questions — job type, location, timeline — ' +
-            'so the tradie arrives at a quote already briefed. ' +
-            'This is a concept built to show local service businesses what\'s possible ' +
-            'when web design is treated as a business investment, not a cost.',
+            'Built in React for performance and long-term maintainability. ' +
+            'The enquiry form captures project type, location, timeline, and budget — ' +
+            'so every lead arrives pre-qualified. ' +
+            'This concept is built to show construction and luxury build companies ' +
+            'what their online presence could look like when it matches the standard ' +
+            'of the work they deliver on site.',
         },
       ],
       images: {
