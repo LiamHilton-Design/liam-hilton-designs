@@ -101,8 +101,8 @@ export const workData = [
     tags: ['React', 'Local SEO', 'Lead Generation'],
     href: '/work/formBuilders',
     externalHref: null,
-    placeholder: '#0d1a0f',     /* deep construction green — trust, craft */
-    accentColor: '#7D9E6E',     /* warm sage — premium, grounded */
+    placeholder: '#F5F2EE',     /* --form-stone-50 — warm off-white page bg */
+accentColor: '#C9A96E',     /* --form-gold-500 — primary gold accent */
     heroImage: null,
   },
 ]
