@@ -37,6 +37,10 @@
 import forgedDesktop from '../assets/case-studies/forged/desktop.png'
 import forgedTablet from '../assets/case-studies/forged/tablet.png'
 import forgedMobile from '../assets/case-studies/forged/mobile.png'
+import okiiDesktop  from '../assets/case-studies/okii/desktop.webp'
+import okiiDesktop2 from '../assets/case-studies/okii/desktop2.webp'
+import okiiMobile   from '../assets/case-studies/okii/mobile.webp'
+import okiiMobile2  from '../assets/case-studies/okii/mobile2.webp'
 
 export const caseStudyData = {
 
@@ -190,9 +194,9 @@ export const caseStudyData = {
         },
       ],
       images: {
-        desktop: null,   /* add import: okii-hero-desktop.webp */
-        tablet:  null,   /* add import: okii-menu-desktop.webp */
-        mobile:  null,   /* add import: okii-home-mobile.webp  */
+        desktop: okiiDesktop,
+        tablet:  okiiMobile,
+        mobile:  okiiMobile2,
       },
     },
   

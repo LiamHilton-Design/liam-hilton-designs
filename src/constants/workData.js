@@ -26,6 +26,8 @@
 import forgedDesktop from '../assets/case-studies/forged/desktop.png'
 import forgedTablet from '../assets/case-studies/forged/tablet.png'
 import forgedMobile from '../assets/case-studies/forged/mobile.png'
+import okiiHero from '../assets/case-studies/okii/desktop.webp'
+
 
 
 export const workData = [
@@ -83,8 +85,8 @@ export const workData = [
     externalHref: 'https://okii-restaurant.vercel.app',
     placeholder: '#0D0F1A',     /* --okii-midnight-950 */
     accentColor: '#E8473F',     /* --okii-vermillion-500 */
-    heroImage: null,            /* add import once screenshots are ready */
-  },
+    heroImage: okiiHero,
+    },
   {
     id: 'formBuilders',
     title: 'Form Builders',
