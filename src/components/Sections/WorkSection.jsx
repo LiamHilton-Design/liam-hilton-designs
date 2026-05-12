@@ -123,7 +123,7 @@ function ProjectRow({ project, index }) {
       ? `url(${project.heroImage})`
       : 'none',
     backgroundSize: 'cover',
-    backgroundPosition: 'left top',
+    backgroundPosition: 'center center',
   }}
   aria-label={`${project.title} preview`}
 >

@@ -17,12 +17,10 @@
  * technique as the Work section — enormous type at near-zero opacity.
  * At full viewport width this creates a dramatic typographic backdrop.
  *
- * The device mockups float at staggered heights:
- * Desktop: baseline (translateY 0)
- * Tablet:  lifted (translateY -40px)
- * Mobile:  most lifted (translateY -80px)
- * This creates a sense of depth — devices exist in 3D space.
- * The frames are pure CSS — no image assets needed.
+ * The mockup row is a single full-width composed image — all devices
+ * baked into one WebP asset per project. No CSS device frames.
+ * Each project's composition is created in Canva with a dark canvas
+ * and project-specific glow colour.
  *
  * The body sections use a two-column layout on desktop:
  * Left column: section label (small, muted, uppercase) + number
@@ -91,12 +89,6 @@
   overflow: hidden;
 }
 
-/* ── Hero overlay ────────────────────────────────────────────
-   Dark diagonal gradient over the screenshot background.
-   Keeps all text readable at any light condition.
-   Sits above the background image, below all content.
-─────────────────────────────────────────────────────────────── */
-
 .cs-hero__overlay {
   position: absolute;
   inset: 0;
@@ -108,7 +100,6 @@
   );
 }
 
-/* Ghost number — large, decorative, behind content */
 .cs-hero__ghost-num {
   position: absolute;
   bottom: -0.1em;
@@ -300,149 +291,44 @@
   color: var(--lhd-dark-400);
 }
 
-/* ─── Device mockups ──────────────────────────────────────────────────────── */
+/* ─── Mockup section ──────────────────────────────────────────────────────── */
+
+/*
+ * Single full-width composed image per project.
+ * All devices (desktop, tablet, mobile) are baked into one WebP asset
+ * created in Canva — dark canvas, project-specific glow colour.
+ * No CSS device frames. No flex layout. Just the image.
+ *
+ * caseStudyData.js shape:
+ * images: { hero: import('path/to/composition.webp') }
+ */
 
 .cs-devices-section {
   background-color: var(--lhd-neutral-900);
-  padding-block: var(--space-3xl);
-  overflow: hidden;
 }
 
-.cs-devices-container {
+.cs-mockups {
   max-width: var(--max-width);
   margin-inline: auto;
+  padding-block: var(--space-xl);
   padding-inline: var(--space-lg);
 }
 
-.cs-devices {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: var(--space-lg);
-  min-height: 380px;
-}
-
-/* ── Individual device ── */
-
-.cs-device {
-  flex-shrink: 0;
-}
-
-/* Desktop */
-.cs-device--desktop {
-  flex: 1;
-  max-width: 640px;
-  transform: translateY(0);
-}
-
-/* Tablet — lifted */
-.cs-device--tablet {
-  width: 200px;
-  transform: translateY(-40px);
-}
-
-/* Mobile — most lifted */
-.cs-device--mobile {
-  width: 110px;
-  transform: translateY(-80px);
-}
-
-/* ── Device frames ── */
-
-.cs-device__frame {
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  box-shadow:
-    0 32px 64px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
-/* Desktop frame — browser chrome */
-.cs-device__frame--desktop {
-  border-radius: 10px;
-}
-
-.cs-device__bar {
-  height: 28px;
-  background: rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  padding-inline: 12px;
-  gap: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.cs-device__bar span {
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* Tablet frame */
-.cs-device__frame--tablet {
-  border-radius: 16px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Mobile frame */
-.cs-device__frame--mobile {
-  border-radius: 24px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-}
-
-.cs-device__notch {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 3px;
-  z-index: 1;
-}
-
-/* ── Screens ── */
-
-.cs-device__screen {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  position: relative;
-}
-
-.cs-device__frame--tablet .cs-device__screen,
-.cs-device__frame--mobile .cs-device__screen {
-  aspect-ratio: 3 / 4;
-  border-radius: 8px;
-}
-
-.cs-device__screen img {
+.cs-mockups__hero {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
   display: block;
+  border-radius: var(--border-radius-lg);
 }
 
-.cs-device__placeholder-label {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+@media (max-width: 639px) {
+  .cs-mockups {
+    padding-inline: 0;
+  }
+
+  .cs-mockups__hero {
+    border-radius: 0;
+  }
 }
 
 /* ─── Case study body ─────────────────────────────────────────────────────── */
@@ -676,30 +562,9 @@
 
 .cs-notfound__link:hover { opacity: 0.7; }
 
-/* ─── Mobile ──────────────────────────────────────────────────────────────── */
+/* ─── Back button mobile ──────────────────────────────────────────────────── */
 
 @media (max-width: 640px) {
-  .cs-device--desktop {
-    width: 100%;
-    max-width: 100%;
-  }
-  .cs-device__frame--desktop {
-    width: 100%;
-  }
-  .cs-device__screen {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-  .cs-devices {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: auto;
-    gap: 0;
-  }
-  .cs-device--tablet,
-  .cs-device--mobile {
-    display: none;
-  }
   .cs-back {
     top: 16px;
     left: 12px;

@@ -300,73 +300,27 @@ function MetricsStrip({ metrics, accentColor }) {
 // CSS transforms handle stagger, no JS needed.
 // ─────────────────────────────────────────────────────────────
 
-function DeviceMockups({ project, images }) {
-  const bg = project.placeholder
+function MockupRow({ project, images }) {
+  if (!images?.hero) return null
 
   return (
     <motion.div
-      className="cs-devices"
+      className="cs-mockups"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      aria-label={`${project.title} — device previews`}
+      aria-label={`${project.title} — project previews`}
     >
-      {/* ── Desktop ───────────────────────────────────────── */}
-      <div className="cs-device cs-device--desktop">
-        <div className="cs-device__frame cs-device__frame--desktop">
-          <div className="cs-device__bar">
-            <span /><span /><span />
-          </div>
-          <div
-            className="cs-device__screen"
-            style={{ backgroundColor: bg }}
-            aria-label="Desktop preview"
-          >
-            {images?.desktop
-              ? <img src={images.desktop} alt={`${project.title} desktop`} loading="lazy" />
-              : <span className="cs-device__placeholder-label">Desktop</span>
-            }
-          </div>
-        </div>
-      </div>
-
-      {/* ── Tablet ────────────────────────────────────────── */}
-      <div className="cs-device cs-device--tablet">
-        <div className="cs-device__frame cs-device__frame--tablet">
-          <div
-            className="cs-device__screen"
-            style={{ backgroundColor: bg }}
-            aria-label="Tablet preview"
-          >
-            {images?.tablet
-              ? <img src={images.tablet} alt={`${project.title} tablet`} loading="lazy" />
-              : <span className="cs-device__placeholder-label">iPad</span>
-            }
-          </div>
-        </div>
-      </div>
-
-      {/* ── Mobile ────────────────────────────────────────── */}
-      <div className="cs-device cs-device--mobile">
-        <div className="cs-device__frame cs-device__frame--mobile">
-          <div className="cs-device__notch" aria-hidden="true" />
-          <div
-            className="cs-device__screen"
-            style={{ backgroundColor: bg }}
-            aria-label="Mobile preview"
-          >
-            {images?.mobile
-              ? <img src={images.mobile} alt={`${project.title} mobile`} loading="lazy" />
-              : <span className="cs-device__placeholder-label">iPhone</span>
-            }
-          </div>
-        </div>
-      </div>
+      <img
+        src={images.hero}
+        alt={`${project.title} — desktop, tablet and mobile preview`}
+        className="cs-mockups__hero"
+        loading="lazy"
+      />
     </motion.div>
   )
 }
-
 // ── Case study body ───────────────────────────────────────────
 // Challenge / Approach / Outcome.
 // Each section animates in as it enters the viewport.
@@ -478,7 +432,7 @@ export default function CaseStudyPage() {
 {/* Device mockups */}
 <section className="cs-devices-section" aria-label="Project previews">
   <div className="cs-devices-container">
-    <DeviceMockups project={project} images={study?.images} />
+    <MockupRow project={project} images={study?.images} />
   </div>
 </section>
 

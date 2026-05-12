@@ -23,11 +23,9 @@
  * overlay remains legible.
  */
 
-import forgedDesktop from '../assets/case-studies/forged/desktop.png'
-import forgedTablet from '../assets/case-studies/forged/tablet.png'
-import forgedMobile from '../assets/case-studies/forged/mobile.png'
-import okiiHero from '../assets/case-studies/okii/desktop.webp'
-
+import okiiHero from '../assets/case-studies/okii/okii-duo-composition.webp'
+import formBuildersHero from '../assets/case-studies/form-builders/form-builders-main-mockup.webp'
+import forgedHero from '../assets/case-studies/forged/forged-main-mockup.webp'
 
 
 export const workData = [
@@ -64,7 +62,7 @@ export const workData = [
     externalHref: 'https://forged-gym.vercel.app',
     placeholder: '#0a0a0a',        /* FORGED dark background */
     accentColor: '#C4DE19',        /* FORGED primary green */
-    heroImage: forgedDesktop,
+    heroImage: forgedHero,
 
   
 
@@ -103,7 +101,7 @@ export const workData = [
     externalHref: 'https://form-builder-two-mu.vercel.app/',
     placeholder: '#F5F2EE',     /* --form-stone-50 — warm off-white page bg */
 accentColor: '#C9A96E',     /* --form-gold-500 — primary gold accent */
-    heroImage: null,
+    heroImage: formBuildersHero,
   },
 ]
 
