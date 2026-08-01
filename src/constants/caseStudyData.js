@@ -35,9 +35,9 @@
  * The client reading this should think "that sounds exactly like me."
  */
 
+import lhdHero from '../assets/case-studies/lhd-portfolio/lhd-main-mockup.webp'
 import okiiHero      from '../assets/case-studies/okii/okii-main-mockup.webp'
 import formBuildersHero from '../assets/case-studies/form-builders/form-builders-main-mockup.webp'
-import forgedHero from '../assets/case-studies/forged/forged-main-mockup.webp'
 import forgedCaseStudy from '../assets/case-studies/forged/forged-case-study-mockup.webp'
 
 
@@ -90,8 +90,7 @@ export const caseStudyData = {
       },
     ],
     images: {
-      hero: null,  // Add composition when LHD mockup is ready
-    },
+      hero: lhdHero,    },
   },
 
   'fitness-studio': {

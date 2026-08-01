@@ -26,12 +26,13 @@
 import okiiHero from '../assets/case-studies/okii/okii-duo-composition.webp'
 import formBuildersHero from '../assets/case-studies/form-builders/form-builders-main-mockup.webp'
 import forgedHero from '../assets/case-studies/forged/forged-main-mockup.webp'
+import lhdHero from '../assets/case-studies/lhd-portfolio/lhd-main-mockup.webp'
 
 
 export const workData = [
   {
     id: 'lhd-portfolio',
-    title: 'Liam Hilton Designs',
+    title: 'Liam Hilton Design',
     category: 'Design Studio',
     status: 'live',
     year: '2025',
@@ -42,9 +43,11 @@ export const workData = [
       'orchestration, and SEO architecture designed to rank.',
     tags: ['React', 'Vite', 'Framer Motion', 'SEO'],
     href: '/work/lhd-portfolio',
-    externalHref: 'https://liamhiltondesigns.com',
+    externalHref: 'https://liamhiltondesign.com',
     placeholder: '#3219A4',     /* Deep Persian blue — brand primary */
     accentColor: '#7862DC',     /* --lhd-persian-light */
+    heroImage: lhdHero,
+
   },
   {
     id: 'fitness-studio',
