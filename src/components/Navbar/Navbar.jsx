@@ -37,6 +37,29 @@ import Logo from '../Logo/Logo'
 
 import './Navbar.css'
 
+/**
+ * isLinkActive
+ *
+ * NavLink's built-in isActive only checks pathname, ignoring hash.
+ * Since "About" points to "/#process", its pathname is "/" — same as Home.
+ * This means NavLink marks About active whenever we're on "/", hash or not.
+ *
+ * This helper checks both pathname AND hash together, so a link like
+ * "/#process" is only active when the hash actually matches too.
+ * Links with no hash (Services, Work, Contact) fall back to a plain
+ * pathname check, unaffected by this fix.
+ */
+function isLinkActive(href, location) {
+  const [basePath, hashPart] = href.split('#')
+  const normalizedBase = basePath || '/'
+
+  if (hashPart) {
+    return location.pathname === normalizedBase && location.hash === `#${hashPart}`
+  }
+
+  return location.pathname === href
+}
+
 // ─── Animation variants ───────────────────────────────────────────────────────
 
 /**
@@ -128,6 +151,8 @@ function Brand({ onClick }) {
 
 
 function DesktopLinks() {
+  const location = useLocation()
+
   return (
     <nav
       className="navbar__desktop-links"
@@ -138,8 +163,8 @@ function DesktopLinks() {
         <NavLink
           key={link.id}
           to={link.href}
-          className={({ isActive }) =>
-            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+          className={
+            `navbar__link ${isLinkActive(link.href, location) ? 'navbar__link--active' : ''}`
           }
         >
           {link.label}
@@ -209,6 +234,8 @@ function HamburgerButton({ isOpen, toggle }) {
  * and hamburger must always remain visible and tappable.
  */
 function MobileMenu({ isOpen, onClose }) {
+  const location = useLocation()
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -237,8 +264,8 @@ function MobileMenu({ isOpen, onClose }) {
               >
                 <NavLink
                   to={link.href}
-                  className={({ isActive }) =>
-                    `navbar__mobile-link ${isActive ? 'navbar__mobile-link--active' : ''}`
+                  className={
+                    `navbar__mobile-link ${isLinkActive(link.href, location) ? 'navbar__mobile-link--active' : ''}`
                   }
                   onClick={onClose}
                 >

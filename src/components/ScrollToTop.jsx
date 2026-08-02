@@ -17,17 +17,41 @@
  * "run this effect every time the URL path changes."
  * This is how you hook into React Router navigation events
  * without any additional libraries.
+ *
+ * HASH HANDLING:
+ * React Router does NOT auto-scroll to hash fragments (#process) —
+ * it only updates the URL. If location.hash is present, we look up
+ * that element by id and scroll to it instead of the top.
+ * A small setTimeout gives the new page/section time to render
+ * before we measure its position — without it, getBoundingClientRect
+ * can fire before layout is ready, especially on first navigation
+ * from a different route.
  */
 
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '')
+      const el = document.getElementById(id)
+
+      if (el) {
+        // Delay ensures the target section has rendered/laid out
+        // before we try to scroll to it — matters most when
+        // navigating from a different route (e.g. /services → /#process)
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 0)
+        return
+      }
+    }
+
     window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [pathname])
+  }, [pathname, hash])
 
   return null
 }
