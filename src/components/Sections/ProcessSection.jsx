@@ -23,11 +23,14 @@
  *    create maximum visual tension. The number sits above the content,
  *    anchoring each step the same way the navbar index anchors each link.
  *
- * 4. QUESTIONNAIRE CTA
- *    Links to Tally or Typeform — replace QUESTIONNAIRE_URL with your link.
- *    Tally.so is free, no branding on free tier, clean embed.
- *    Create a form with: Name, Email, Business type, Project description,
- *    Budget range, Timeline. This brief replaces 30 minutes of discovery.
+ * 4. BOOKING CTA
+ *    Links directly to a Calendly booking page for a free 30-minute
+ *    discovery call — replaces the earlier Tally questionnaire concept.
+ *    A call qualifies leads live (no async form to review) and gives
+ *    prospects a lower-friction first step than a paid engagement,
+ *    while still letting Liam gauge fit before committing to a full
+ *    60-minute strategy call (that call happens later, as Week 1 of
+ *    the actual process above).
  *
  * 5. DARK TEXT ON ORANGE
  *    All text uses Woodsmoke (--lhd-neutral-900) — never white on orange.
@@ -47,8 +50,8 @@ import { motion } from 'framer-motion'
 import { processData } from '../../constants/processData'
 import './ProcessSection.css'
 
-// Replace with your actual Tally or Typeform URL
-const QUESTIONNAIRE_URL = 'https://tally.so/r/your-form-id'
+// Discovery call booking — Calendly
+const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/30min'
 
 // ─── Animation variants ───────────────────────────────────────────────────────
 
@@ -155,54 +158,49 @@ function ProcessHeader() {
   )
 }
 
-// ─── Questionnaire CTA ────────────────────────────────────────────────────────
+// ─── Booking CTA ──────────────────────────────────────────────────────────────
 
 /**
- * QuestionnaireCTA
+ * BookingCTA
  *
  * This sits BELOW the four steps — the natural next action after
  * a visitor has read the process and thought "okay, I'm ready."
  *
- * The questionnaire brief is more valuable than a phone number because:
- * 1. It qualifies leads before the first call — you know their budget,
- *    timeline, and project type before picking up the phone
- * 2. It gives clients a low-commitment first step — filling a form
- *    feels less scary than "book a call"
- * 3. It gives YOU a structured brief to prepare from
- *
- * The copy emphasises: takes 3 minutes, no obligation, you respond
- * within 24 hours. Every friction point addressed before it's raised.
+ * A 30-minute discovery call is the low-commitment first step —
+ * no obligation, no pitch, just finding out if it's a fit. Once
+ * qualified, the real 60-minute strategy call happens as Week 1
+ * of the actual process above.
  */
-function QuestionnaireCTA() {
+function BookingCTA() {
   return (
     <motion.div className="process__cta" variants={headingVariants}>
       <div className="process__cta-inner">
         <div className="process__cta-content">
           <p className="process__cta-eyebrow">Ready to begin?</p>
           <h3 className="process__cta-headline">
-            Tell us about your project
+            Let's talk about your project
           </h3>
           <p className="process__cta-body">
-            Answer 6 quick questions about your business, goals, and
-            timeline. Takes 3 minutes. We'll come back to you within
-            24 hours with honest thoughts and a clear next step.
-            No obligation, no hard sell.
+            Book a free 30-minute discovery call. No pitch, no pressure —
+            just a straight conversation about your business, your goals,
+            and whether we're the right fit. If it makes sense, we'll
+            book your strategy call from there.
           </p>
         </div>
 
         <div className="process__cta-actions">
-          <a
-            href={QUESTIONNAIRE_URL}
+          
+          <a  href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="process__cta-btn process__cta-btn--primary"
-            aria-label="Start your project brief — takes 3 minutes"
+            aria-label="Book a 30-minute discovery call"
           >
-            <span>Start your brief</span>
+            <span>Book a discovery call</span>
             <span aria-hidden="true">→</span>
           </a>
-          <a
-            href="/contact"
+          
+          <a  href="/contact"
             className="process__cta-btn process__cta-btn--secondary"
             aria-label="Get in touch another way"
           >
@@ -213,13 +211,13 @@ function QuestionnaireCTA() {
         {/* Trust signals */}
         <div className="process__cta-trust">
           <span className="process__trust-item">
-            <span aria-hidden="true">✓</span> 3 minutes to complete
-          </span>
-          <span className="process__trust-item">
-            <span aria-hidden="true">✓</span> Response within 24 hours
+            <span aria-hidden="true">✓</span> 30 minutes, free
           </span>
           <span className="process__trust-item">
             <span aria-hidden="true">✓</span> No obligation
+          </span>
+          <span className="process__trust-item">
+            <span aria-hidden="true">✓</span> Straight answers, no pitch
           </span>
         </div>
       </div>
@@ -265,7 +263,7 @@ export default function ProcessSection() {
             ))}
           </div>
 
-          <QuestionnaireCTA />
+          <BookingCTA />
 
         </motion.div>
       </div>
