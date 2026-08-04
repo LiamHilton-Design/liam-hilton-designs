@@ -80,4 +80,25 @@ export const servicesData = [
       ],
       href: '/contact',
     },
+    {
+      id: 'booking',
+      name: 'Bookings that run themselves',
+      tag: 'Booking Integration',
+      hook: 'Setup once. Maintained monthly. Never chase a manual booking again.',
+      description:
+        'If your business takes appointments or bookings, a manual process ' +
+        'is costing you clients — every phone tag, every double-booked slot, ' +
+        'every "let me check and get back to you" is a lead walking away. ' +
+        'I connect your website to a real booking system, so clients book ' +
+        'themselves in while you focus on the work.',
+      deliverables: [
+        'Square, Acuity, Calendly, or HoneyBook integration',
+        'Custom booking flow matched to your services',
+        'Automated confirmations and reminders',
+        'Calendar sync across your team',
+        'Setup: one-off — Maintenance: monthly retainer',
+        'Priority support for booking issues',
+      ],
+      href: '/contact',
+    },
   ]
