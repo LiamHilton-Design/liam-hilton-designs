@@ -11,17 +11,16 @@ import WorkSection from '../components/Sections/WorkSection'
 import { Helmet } from 'react-helmet-async'
 
 export default function WorkPage() {
-  // inside the component, before the return:
-<Helmet>
-  <title>Work — Custom Websites for Byron Bay Businesses | Liam Hilton Design</title>
-  <meta
-    name="description"
-    content="Custom React and Webflow websites for hospitality, fitness, construction, and lifestyle brands. See the full portfolio."
-  />
-</Helmet>
   return (
     <>
-      {/* Hero header — simple, gives the page context */}
+      <Helmet>
+        <title>Work — Custom Websites for Byron Bay Businesses | Liam Hilton Design</title>
+        <meta
+          name="description"
+          content="Custom React and Webflow websites for hospitality, fitness, construction, and lifestyle brands. See the full portfolio."
+        />
+      </Helmet>
+
       <div style={{
         background: 'var(--color-section-dark)',
         paddingTop: '120px',
@@ -29,7 +28,6 @@ export default function WorkPage() {
         paddingInline: 'var(--space-lg)',
       }}>
         <div style={{ maxWidth: 'var(--max-width)', marginInline: 'auto' }}>
-          
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
@@ -43,7 +41,6 @@ export default function WorkPage() {
         </div>
       </div>
       <WorkSection />
-
     </>
   )
 }

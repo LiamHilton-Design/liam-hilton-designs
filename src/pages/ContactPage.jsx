@@ -13,13 +13,7 @@ import { Helmet } from 'react-helmet-async'
 
 export default function ContactPage() 
 {
-  <Helmet>
-  <title>Contact — Liam Hilton Design</title>
-  <meta
-    name="description"
-    content="Get in touch with Liam Hilton Design. Book a free 30-minute discovery call or send a message."
-  />
-</Helmet>
+
 
 
   // Scroll to the contact form in the footer
@@ -34,6 +28,14 @@ export default function ContactPage()
   
 
   return (
+    <>
+      <Helmet>
+  <title>Contact — Liam Hilton Design</title>
+  <meta
+    name="description"
+    content="Get in touch with Liam Hilton Design. Book a free 30-minute discovery call or send a message."
+  />
+</Helmet>
     <div style={{
       minHeight: '60vh',
       background: 'var(--color-section-dark)',
@@ -76,5 +78,6 @@ export default function ContactPage()
         Scroll down to send us a message ↓
       </p>
     </div>
+    </>
   )
 }
