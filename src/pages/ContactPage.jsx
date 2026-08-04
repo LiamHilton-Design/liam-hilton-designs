@@ -9,8 +9,19 @@
  */
 
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 
-export default function ContactPage() {
+export default function ContactPage() 
+{
+  <Helmet>
+  <title>Contact — Liam Hilton Design</title>
+  <meta
+    name="description"
+    content="Get in touch with Liam Hilton Design. Book a free 30-minute discovery call or send a message."
+  />
+</Helmet>
+
+
   // Scroll to the contact form in the footer
   useEffect(() => {
     const el = document.getElementById('contact')
@@ -20,6 +31,7 @@ export default function ContactPage() {
       }, 100)
     }
   }, [])
+  
 
   return (
     <div style={{

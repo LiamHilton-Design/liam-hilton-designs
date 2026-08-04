@@ -8,8 +8,17 @@
  */
 
 import WorkSection from '../components/Sections/WorkSection'
+import { Helmet } from 'react-helmet-async'
 
 export default function WorkPage() {
+  // inside the component, before the return:
+<Helmet>
+  <title>Work — Custom Websites for Byron Bay Businesses | Liam Hilton Design</title>
+  <meta
+    name="description"
+    content="Custom React and Webflow websites for hospitality, fitness, construction, and lifestyle brands. See the full portfolio."
+  />
+</Helmet>
   return (
     <>
       {/* Hero header — simple, gives the page context */}

@@ -32,6 +32,8 @@ import WorkPage       from './pages/WorkPage'
 import ServicesPage   from './pages/ServicesPage'
 import ContactPage    from './pages/ContactPage'
 import { tools, valueProps } from './constants/marqueeData'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
+
 import './styles/variables.css'
 import './App.css'
 
@@ -40,6 +42,13 @@ import './App.css'
 function HomePage() {
   return (
     <>
+    <Helmet>
+    <title>Liam Hilton Design — Web Design Studio Byron Bay</title>
+    <meta
+  name="description"
+  content="Custom web design and SEO for hospitality, fitness, construction and lifestyle brands in Byron Bay. Sites that rank and convert."
+/>
+    </Helmet>
       <HeroSection />
       <MarqueeStrip items={valueProps} variant="values" speed="medium" separator="·" />
       <MarqueeStrip items={tools} variant="tools" speed="slow" separator="·" direction="right" />
@@ -54,6 +63,7 @@ function HomePage() {
 
 function App() {
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
@@ -68,6 +78,7 @@ function App() {
       </main>
       <Footer />
     </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

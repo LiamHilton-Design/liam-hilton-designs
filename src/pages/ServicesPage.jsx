@@ -5,8 +5,16 @@
 
 import ServicesSection from '../components/Sections/ServicesSection'
 import AnimatedGrid from '../components/Sections/AnimatedGrid'
+import { Helmet } from 'react-helmet-async'
 
 export default function ServicesPage() {
+  <Helmet>
+  <title>Services — Web Design, SEO & AEO | Liam Hilton Design</title>
+  <meta
+    name="description"
+    content="Custom web design, SEO + AEO optimisation, and booking platform integration for Byron Bay businesses. See what's included."
+  />
+</Helmet>
   return (
     <>
 

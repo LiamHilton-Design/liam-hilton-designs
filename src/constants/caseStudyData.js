@@ -93,7 +93,7 @@ export const caseStudyData = {
       hero: lhdHero,    },
   },
 
-  'fitness-studio': {
+  'forged-studio': {
     metrics: [
       { value: '100%',  label: 'Mobile responsive'    },
       { value: 'React', label: 'Built with'           },

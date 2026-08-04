@@ -50,7 +50,7 @@ export const workData = [
 
   },
   {
-    id: 'fitness-studio',
+    id: 'forged-studio',
     title: 'FORGED',
     category: 'Fitness & Wellness',
     status: 'live',
@@ -61,7 +61,7 @@ export const workData = [
       'Responsive, fast-loading, structured for local SEO and ' +
       'converting browsers into booked classes.',
     tags: ['React', 'Responsive', 'Local SEO'],
-    href: '/work/fitness-studio',
+    href: '/work/forged-studio',
     externalHref: 'https://forged-gym.vercel.app',
     placeholder: '#0a0a0a',        /* FORGED dark background */
     accentColor: '#C4DE19',        /* FORGED primary green */

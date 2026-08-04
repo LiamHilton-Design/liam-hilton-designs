@@ -66,6 +66,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { workData } from '../constants/workData'
 import { caseStudyData } from '../constants/caseStudyData'
+import { Helmet } from 'react-helmet-async'
 import './CaseStudyPage.css'
 
 
@@ -408,10 +409,31 @@ export default function CaseStudyPage() {
   const project = workData.find(p => p.id === id)
   const study = caseStudyData[id]
 
-  if (!project) return <NotFound />
+  if (!project) {
+    return (
+      <>
+        <Helmet>
+          <title>Case Study Not Found — Liam Hilton Design</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
+        <NotFound />
+      </>
+    )
+  }
 
   return (
     <>
+      <Helmet>
+        <title>{project.title} — Case Study | Liam Hilton Design</title>
+        <meta
+          name="description"
+          content={`${project.shortDescription} A ${project.category.toLowerCase()} project by Liam Hilton Design, Byron Bay.`}
+        />
+        <meta property="og:title" content={`${project.title} — Case Study | Liam Hilton Design`} />
+        <meta property="og:description" content={project.shortDescription} />
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       {/* Reading progress bar — fixed at top */}
       <ProgressBar accentColor={project.accentColor} />
 
@@ -429,13 +451,12 @@ export default function CaseStudyPage() {
         />
       )}
 
-{/* Device mockups */}
-<section className="cs-devices-section" aria-label="Project previews">
-  <div className="cs-devices-container">
-    <MockupRow project={project} images={study?.images} />
-  </div>
-</section>
-
+      {/* Device mockups */}
+      <section className="cs-devices-section" aria-label="Project previews">
+        <div className="cs-devices-container">
+          <MockupRow project={project} images={study?.images} />
+        </div>
+      </section>
 
       {/* Body — challenge / approach / outcome */}
       {study?.sections && (
