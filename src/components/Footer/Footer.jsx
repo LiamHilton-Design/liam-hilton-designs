@@ -49,7 +49,7 @@ const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 // ─── Availability — update monthly ───────────────────────────────────────────
-const AVAILABILITY_MONTH = 'May'
+const AVAILABILITY_MONTH = 'September'
 
 // ─── Navigation links ─────────────────────────────────────────────────────────
 const NAV_LINKS = [

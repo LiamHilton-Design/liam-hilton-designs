@@ -14,7 +14,7 @@ export default function ServicesPage() {
         <title>Services — Web Design, SEO & AEO | Liam Hilton Design</title>
         <meta
           name="description"
-          content="Custom web design, SEO + AEO optimisation, and booking platform integration for Byron Bay businesses. See what's included."
+          content="Custom web design, SEO + AEO optimisation, and booking platform integration for Byron Bay and Northern Rivers businesses. See what's included."
         />
       </Helmet>
 
