@@ -103,14 +103,15 @@ const ctaVariants = {
  * This answers the subconscious question "but what am I paying for?"
  * before it's even asked.
  */
-function ServiceCard({ service, index }) {
+export function ServiceCard({ service, index }) {
+  const isPartner = service.isPartner
+
   return (
     <motion.article
-      className="service-card"
+      className={`service-card ${isPartner ? 'service-card--partner' : ''}`}
       variants={cardVariants}
       aria-label={service.name}
     >
-      {/* Index number — the design language anchor */}
       <div className="service-card__header">
         <span className="service-card__index" aria-hidden="true">
           {String(index + 1).padStart(2, '0')}
@@ -118,16 +119,16 @@ function ServiceCard({ service, index }) {
         <span className="service-card__tag">{service.tag}</span>
       </div>
 
-      {/* Service name — outcome-led */}
+      {isPartner && (
+        <span className="service-card__partner-badge">
+          In partnership with {service.partnerName}
+        </span>
+      )}
+
       <h3 className="service-card__name">{service.name}</h3>
-
-      {/* Hook line — the converter */}
       <p className="service-card__hook">{service.hook}</p>
-
-      {/* Description — supporting detail */}
       <p className="service-card__description">{service.description}</p>
 
-      {/* Deliverables — what they actually get */}
       <ul className="service-card__deliverables" aria-label="What's included">
         {service.deliverables.map((item, i) => (
           <li key={i} className="service-card__deliverable">
@@ -137,19 +138,29 @@ function ServiceCard({ service, index }) {
         ))}
       </ul>
 
-      {/* Learn more link */}
-      <Link
-  to={service.href}
-  className="service-card__link"
-  aria-label={`Learn more about ${service.name}`}
->
-  <span>Learn more</span>
-  <span aria-hidden="true">→</span>
-</Link>
+      {isPartner ? (
+        
+         <a href={service.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="service-card__link"
+          aria-label={`View ${service.partnerName}'s portfolio`}
+        >
+          <span>View portfolio</span>
+        </a>
+      ) : (
+        <Link
+          to={service.href}
+          className="service-card__link"
+          aria-label={`Learn more about ${service.name}`}
+        >
+          <span>Learn more</span>
+          <span aria-hidden="true">→</span>
+        </Link>
+      )}
     </motion.article>
   )
 }
-
 // ─── Section header ───────────────────────────────────────────────────────────
 
 function SectionHeader() {

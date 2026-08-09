@@ -1,0 +1,118 @@
+/**
+ * ServicesClosingCTA.css
+ * Liam Hilton Designs
+ *
+ * The dominant closing moment — full-bleed dark, oversized type,
+ * centred. Deliberately larger and more direct than any other CTA
+ * on the page. This is the last ask before the footer.
+ */
+
+ .services-closing {
+    background-color: var(--lhd-neutral-900);
+    padding-block: var(--space-3xl);
+  }
+  
+  .services-closing__container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+  }
+  
+  .services-closing__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  
+  .services-closing__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lhd-orange-light);
+    margin: 0;
+  }
+  
+  .services-closing__headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--lhd-dark-50);
+    margin: 0;
+  }
+  
+  .services-closing__headline-accent {
+    color: var(--lhd-persian-light);
+    font-style: italic;
+  }
+  
+  .services-closing__body {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--lhd-dark-400);
+    max-width: 52ch;
+    margin: 0;
+  }
+  
+  .services-closing__actions {
+    margin-top: var(--space-sm);
+  }
+  
+  .services-closing__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 18px 36px;
+    border-radius: var(--border-radius);
+    background-color: #ffffff;
+    color: var(--lhd-neutral-900);
+    transition: gap 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .services-closing__cta:hover {
+    gap: 16px;
+    background-color: var(--lhd-orange-light);
+    color: var(--lhd-neutral-900);
+  }
+  
+  .services-closing__trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+  }
+  
+  .services-closing__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--lhd-dark-400);
+    letter-spacing: 0.04em;
+  }
+  
+  .services-closing__trust-item span:first-child {
+    color: #1D9E75;
+    font-weight: 700;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .services-closing__cta {
+      transition: none;
+    }
+  }

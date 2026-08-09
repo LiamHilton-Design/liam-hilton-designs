@@ -1,0 +1,126 @@
+/**
+ * ServicesHero.css
+ * Liam Hilton Designs
+ *
+ * Page hero — distinct from the homepage hero. No animated grid,
+ * no scroll indicator. Faster, punchier — the visitor already
+ * clicked through, they want depth now.
+ */
+
+ .services-hero {
+    padding-top: 160px;
+    padding-bottom: var(--space-3xl);
+    background-color: var(--color-bg);
+  }
+  
+  .services-hero__container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+  }
+  
+  .services-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 800px;
+  }
+  
+  .services-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  
+  .services-hero__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--lhd-orange-500);
+  }
+  
+  .services-hero__headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--color-text-primary);
+    margin: 0;
+    text-wrap: balance; /* prevents orphaned single words on the last line */
+
+  }
+  
+  .services-hero__headline-accent {
+    color: var(--color-brand);
+    font-style: italic;
+  }
+  
+  .services-hero__subheadline {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    margin: 0;
+  }
+  
+  .services-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+  
+  .services-hero__cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transition: gap 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .services-hero__cta-primary:hover {
+    gap: 14px;
+    background-color: var(--lhd-persian-dark);
+  }
+  
+  .services-hero__cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .services-hero__cta-secondary:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-surface);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .services-hero__cta-primary,
+    .services-hero__cta-secondary {
+      transition: none;
+    }
+  }
