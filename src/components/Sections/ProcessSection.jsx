@@ -181,7 +181,7 @@ function BookingCTA() {
             Let's talk about your project
           </h3>
           <p className="process__cta-body">
-            Book a free 30-minute discovery call. No pitch, no pressure —
+            Book a free 15-minute discovery call. No pitch, no pressure —
             just a straight conversation about your business, your goals,
             and whether we're the right fit. If it makes sense, we'll
             book your strategy call from there.
@@ -211,7 +211,7 @@ function BookingCTA() {
         {/* Trust signals */}
         <div className="process__cta-trust">
           <span className="process__trust-item">
-            <span aria-hidden="true">✓</span> 30 minutes, free
+            <span aria-hidden="true">✓</span> 15 minutes
           </span>
           <span className="process__trust-item">
             <span aria-hidden="true">✓</span> No obligation

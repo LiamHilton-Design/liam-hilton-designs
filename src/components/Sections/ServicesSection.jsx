@@ -211,7 +211,7 @@ function CalendlyCTA() {
       <div className="services__cta-content">
         <p className="services__cta-eyebrow">Ready to start?</p>
         <h3 className="services__cta-headline">
-          Book a free 30-minute strategy call
+          Book a free 15-minute strategy call
         </h3>
         <p className="services__cta-body">
           No obligation. No hard sell. Just an honest conversation
