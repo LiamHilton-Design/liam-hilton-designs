@@ -247,7 +247,7 @@ function CalendlyCTA() {
           <span aria-hidden="true">✓</span> Free — 
         </span>
         <span className="services__trust-item">
-          <span aria-hidden="true">✓</span> 30 minutes
+          <span aria-hidden="true">✓</span> 15 minutes
         </span>
         <span className="services__trust-item">
           <span aria-hidden="true">✓</span> Clear action plan included
