@@ -53,7 +53,7 @@ export default function ServicesClosingCTA() {
           </motion.h2>
 
           <motion.p className="services-closing__body" variants={fadeUpVariants}>
-            One free 30-minute call. No pitch, no pressure — just an honest
+            One free 15-minute call. No pitch, no pressure — just an honest
             look at where your website stands and what it would take to
             fix it.
           </motion.p>
@@ -73,7 +73,7 @@ export default function ServicesClosingCTA() {
 
           <motion.div className="services-closing__trust" variants={fadeUpVariants}>
             <span className="services-closing__trust-item">
-              <span aria-hidden="true">✓</span> Free — 30 minutes
+              <span aria-hidden="true">✓</span> Free — 15 minutes
             </span>
             <span className="services-closing__trust-item">
               <span aria-hidden="true">✓</span> No obligation
