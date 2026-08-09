@@ -48,7 +48,7 @@ export const processData = [
     {
       id: 'design-build',
       title: 'Design & Build',
-      duration: 'Week 2–5',
+      duration: 'Week 2–3',
       description:
         'This is where it comes to life. I and build ' +
         'simultaneously — you see real progress every week, not ' +
@@ -64,7 +64,7 @@ export const processData = [
     {
       id: 'launch-grow',
       title: 'Launch & Grow',
-      duration: 'Week 5–6+',
+      duration: 'Week 4–6+',
       description:
         'Launch day is the beginning, not the end. I the ' +
         'technical deployment, set up your analytics, submit to ' +

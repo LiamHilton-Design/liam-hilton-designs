@@ -59,16 +59,16 @@ function ProcessHeader() {
     <motion.div className="process__header" variants={headingVariants}>
       <div className="process__eyebrow">
         <span className="process__eyebrow-index" aria-hidden="true">05</span>
-        <span>How it works</span>
+        <span>The process</span>
       </div>
       <h2 className="process__headline">
-        From first conversation{' '}
-        <span className="process__headline-accent">to launch day.</span>
+        You've seen what I offer.{' '}
+        <span className="process__headline-accent">Here's how we'd actually work together.</span>
       </h2>
       <p className="process__subheadline">
-        No surprises. No confusion. Just a clear four-step process
-        that takes you from idea to a live, converting website —
-        with you informed and in control at every stage.
+        Every project — whatever combination of services you need —
+        follows the same four stages. Transparent from the first call
+        to the moment your site goes live.
       </p>
     </motion.div>
   )
