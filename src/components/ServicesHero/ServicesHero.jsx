@@ -12,7 +12,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './ServicesHero.css'
 
-const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/30min'
+const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/discovery'
 
 const fadeUpVariants = {
   hidden:  { opacity: 0, y: 24 },
