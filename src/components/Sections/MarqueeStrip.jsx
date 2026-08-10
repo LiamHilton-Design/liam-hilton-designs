@@ -1,16 +1,10 @@
 /**
- * MarqueeStrip.jsx — Self-contained version with inline CSS
- * Liam Hilton Designs
+ * MarqueeStrip.jsx
+ * Liam Hilton Design
  *
- * WHY INLINE STYLES HERE:
- * The marquee wasn't rendering visually despite the component mounting.
- * Most likely cause: MarqueeStrip.css import path was wrong or
- * the CSS file wasn't being found by Vite.
- *
- * This version uses inline styles for the critical layout properties
- * so it renders correctly regardless of CSS file resolution.
- * The CSS file can still be imported for fine-tuning — these inline
- * styles just ensure the base rendering always works.
+ * Renders items in a seamless looping marquee. Text-only — no icon
+ * markup, so no per-render SVG parsing cost and no trademark/logo
+ * usage question to manage.
  */
 
 import './MarqueeStrip.css'
@@ -73,14 +67,6 @@ export default function MarqueeStrip({
                 flexShrink: 0,
               }}
             >
-              {/* Icon — tools variant */}
-              {item.icon && isTools && (
-                <span
-                  style={{ width: '18px', height: '18px', flexShrink: 0 }}
-                  dangerouslySetInnerHTML={{ __html: item.icon }}
-                />
-              )}
-
               {/* Label */}
               <span style={{
                 fontFamily: 'var(--font-body)',
