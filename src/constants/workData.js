@@ -39,7 +39,7 @@ export const workData = [
     result: 'Custom React design system — built from scratch',
     shortDescription:
       'A full custom-coded studio portfolio built with React + Vite. ' +
-      'Two-layer CSS token system, animated SVG grid, Framer Motion ' +
+      'Three layer CSS token system, animated SVG grid, Framer Motion ' +
       'orchestration, and SEO architecture designed to rank.',
     tags: ['React', 'Vite', 'Framer Motion', 'SEO'],
     href: '/work/lhd-portfolio',
@@ -85,7 +85,7 @@ export const workData = [
     href: '/work/okii-restaurant',
     externalHref: 'https://okii-restaurant.vercel.app',
     placeholder: '#0D0F1A',     /* --okii-midnight-950 */
-    accentColor: '#E8473F',     /* --okii-vermillion-500 */
+    accentColor: '#E8472A',     /* --okii-vermillion-500 */
     heroImage: okiiHero,
     },
   {

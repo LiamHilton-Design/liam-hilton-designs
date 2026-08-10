@@ -227,7 +227,7 @@ function CalendlyCTA() {
           target="_blank"
           rel="noopener noreferrer"
           className="services__cta-btn services__cta-btn--primary"
-          aria-label="Book a free 15-minute strategy call with Liam Hilton Designs"
+          aria-label="Book a free 15-minute strategy call with Liam Hilton Design"
         >
           <span>Book your free call</span>
           <span aria-hidden="true">→</span>
@@ -261,7 +261,7 @@ export default function ServicesSection() {
     <section
       className="services"
       role="region"
-      aria-label="Services — Liam Hilton Designs"
+      aria-label="Services — Liam Hilton Design"
       id="services"
     >
       <div className="services__container">
