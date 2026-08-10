@@ -34,12 +34,12 @@ export const heroData = {
     primary: {
       label: 'See my work',
       href: '/work',
-      ariaLabel: 'View Liam Hilton Designs portfolio and case studies',
+      ariaLabel: 'View Liam Hilton Design\u2019s portfolio and case studies',
     },
     secondary: {
-      label: 'Get a free audit',
-      href: '/contact',
-      ariaLabel: 'Get a free website audit from Liam Hilton Designs',
+      label: 'See how it works',
+      href: '/#process',
+      ariaLabel: 'See how the process works at Liam Hilton Design',
     },
   },
 

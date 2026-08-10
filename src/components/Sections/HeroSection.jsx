@@ -157,7 +157,7 @@ export default function HeroSection() {
     <section
       className="hero"
       role="banner"
-      aria-label="Liam Hilton Designs — Web Design Studio"
+      aria-label="Liam Hilton Design — Web Design Studio"
       ref={sectionRef}
     >
       <AnimatedGrid />

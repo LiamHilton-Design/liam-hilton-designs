@@ -194,7 +194,7 @@ function BookingCTA() {
             target="_blank"
             rel="noopener noreferrer"
             className="process__cta-btn process__cta-btn--primary"
-            aria-label="Book a 30-minute discovery call"
+            aria-label="Book a 15-minute discovery call"
           >
             <span>Book a discovery call</span>
             <span aria-hidden="true">→</span>
