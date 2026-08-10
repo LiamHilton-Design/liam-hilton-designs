@@ -51,7 +51,7 @@ import { processData } from '../../constants/processData'
 import './ProcessSection.css'
 
 // Discovery call booking — Calendly
-const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/30min'
+const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/discovery'
 
 // ─── Animation variants ───────────────────────────────────────────────────────
 
