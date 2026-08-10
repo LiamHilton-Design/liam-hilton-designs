@@ -227,7 +227,7 @@ function CalendlyCTA() {
           target="_blank"
           rel="noopener noreferrer"
           className="services__cta-btn services__cta-btn--primary"
-          aria-label="Book a free 30-minute strategy call with Liam Hilton Designs"
+          aria-label="Book a free 15-minute strategy call with Liam Hilton Designs"
         >
           <span>Book your free call</span>
           <span aria-hidden="true">→</span>
@@ -243,12 +243,9 @@ function CalendlyCTA() {
 
       {/* Trust signals under the CTA */}
       <div className="services__cta-trust">
-        <span className="services__trust-item">
-          <span aria-hidden="true">✓</span> Free — 
-        </span>
-        <span className="services__trust-item">
-          <span aria-hidden="true">✓</span> 15 minutes
-        </span>
+      <span className="services__trust-item">
+  <span aria-hidden="true">✓</span> Free — 15 minutes
+</span>
         <span className="services__trust-item">
           <span aria-hidden="true">✓</span> Clear action plan included
         </span>

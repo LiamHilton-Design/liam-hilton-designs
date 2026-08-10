@@ -13,7 +13,7 @@
 import { motion } from 'framer-motion'
 import './ServicesClosingCTA.css'
 
-const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/30min'
+const BOOKING_URL = 'https://calendly.com/liamhiltonwebdesign/discovery'
 
 const containerVariants = {
   hidden: {},
