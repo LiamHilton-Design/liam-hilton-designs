@@ -56,7 +56,7 @@ import { Link } from 'react-router-dom'
 import './ServiceSection.css'
 
 // Replace with your actual Calendly URL
-const CALENDLY_URL = 'https://calendly.com/liamhiltonwebdesign/30min'
+const CALENDLY_URL = 'https://calendly.com/liamhiltonwebdesign/discovery'
 // ─── Animation variants ───────────────────────────────────────────────────────
 
 const sectionVariants = {

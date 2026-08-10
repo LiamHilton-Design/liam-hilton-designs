@@ -48,9 +48,9 @@ export default function ServicesClosingCTA() {
           </motion.p>
 
           <motion.h2 className="services-closing__headline" variants={fadeUpVariants}>
-            Let's make your website{' '}
-            <span className="services-closing__headline-accent">work harder.</span>
-          </motion.h2>
+  Let&rsquo;s make your website{' '}
+  <span className="services-closing__headline-accent">work harder.</span>
+</motion.h2>
 
           <motion.p className="services-closing__body" variants={fadeUpVariants}>
             One free 15-minute call. No pitch, no pressure — just an honest
@@ -64,7 +64,7 @@ export default function ServicesClosingCTA() {
               target="_blank"
               rel="noopener noreferrer"
               className="services-closing__cta"
-              aria-label="Book a free 30-minute discovery call"
+              aria-label="Book a free 15-minute discovery call"
             >
               <span>Book your free call</span>
               <span aria-hidden="true">→</span>

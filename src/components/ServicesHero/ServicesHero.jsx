@@ -63,7 +63,7 @@ export default function ServicesHero() {
               target="_blank"
               rel="noopener noreferrer"
               className="services-hero__cta-primary"
-              aria-label="Book a free 30-minute discovery call"
+              aria-label="Book a free 15-minute discovery call"
             >
               <span>Book a discovery call</span>
               <span aria-hidden="true">→</span>

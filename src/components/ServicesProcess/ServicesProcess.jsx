@@ -62,9 +62,9 @@ function ProcessHeader() {
         <span>The process</span>
       </div>
       <h2 className="process__headline">
-        You've seen what I offer.{' '}
-        <span className="process__headline-accent">Here's how we'd actually work together.</span>
-      </h2>
+  You&rsquo;ve seen what I offer.{' '}
+  <span className="process__headline-accent">Here&rsquo;s how we&rsquo;d actually work together.</span>
+</h2>
       <p className="process__subheadline">
         Every project — whatever combination of services you need —
         follows the same four stages. Transparent from the first call

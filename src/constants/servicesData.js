@@ -57,11 +57,11 @@ export const servicesData = [
     tag: 'Brand Identity',
     hook: 'A visual language so distinctive clients recognise you before they read a word.',
     description:
-      'Your brand is not your logo — it is the feeling someone gets ' +
-      'the moment they encounter your business. Working alongside Studio Artius, ' +
-      'we build brand identities that communicate who you are instantly: ' +
-      'the typography, colour system, visual language, and design principles ' +
-      'that make you impossible to ignore and impossible to confuse with anyone else.',
+    'Your brand is not your logo — it is the feeling someone gets ' +
+    'the moment they encounter your business. Working alongside Studio Artius, ' +
+    'I bring in brand identity that communicates who you are instantly: ' +
+    'the typography, colour system, visual language, and design principles ' +
+    'that make you impossible to ignore and impossible to confuse with anyone else.',
     deliverables: [
       'Logo design and brand mark',
       'Colour palette and typography system',
